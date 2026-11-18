@@ -3,25 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LeaseProp | Lease Commercial Spaces in Delhi NCR</title>
-  <meta name="description" content="Discover verified offices, retail and co-working spaces for lease across Delhi NCR with transparent pricing. List your commercial property with LeaseProp." />
+  <title>LeaseProp | Leasing Incubator for Landlords &amp; Tenants</title>
+  <meta name="description" content="LeaseProp is a new, technology-led leasing incubator in Noida and the wider NCR, founded by an IT veteran with 18+ years of experience. We work between landlords and tenants to prepare, match and close commercial office leases." />
   <meta name="theme-color" content="#012a2d" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="LeaseProp | Lease Commercial Spaces" />
-  <meta property="og:description" content="Verified offices, retail and flexible workspaces with transparent pricing." />
+  <meta property="og:title" content="LeaseProp | Leasing Incubator for Landlords &amp; Tenants" />
+  <meta property="og:description" content="A technology-led company between landlords and tenants, facilitating commercial office leases in Noida and the wider NCR." />
   <meta property="og:image" content="assets/img/hero-building.jpg" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LeaseProp",
+    "url": "https://www.leaseprop.in",
+    "description": "A technology-led leasing incubator in Noida and the wider NCR, working between landlords and tenants on commercial office leasing and managed workspaces.",
+    "email": "info@leaseprop.in",
+    "telephone": "+91-9354346573",
+    "founder": {
+      "@type": "Person",
+      "name": "Ankur Parashar",
+      "jobTitle": "Founder & Director",
+      "sameAs": "https://www.linkedin.com/in/ankur-parashar-27039610"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Serif display (headings) + clean sans (body), in the spirit of a corporate real-estate brand -->
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --green: #006a4d;          /* primary brand green */
-      --green-dark: #012a2d;     /* deep forest, header/hero/footer */
+      --green: #006a4d;
+      --green-dark: #012a2d;
       --green-mid: #03393d;
-      --mint: #17e88f;           /* accent */
+      --mint: #17e88f;
       --mint-soft: #e6f8ef;
       --ink: #1f2a2b;
       --muted: #5b6b6c;
@@ -34,7 +50,7 @@
       --sans: "Public Sans", "Segoe UI", Arial, sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     img { max-width: 100%; display: block; }
     a { color: inherit; }
@@ -44,7 +60,7 @@
     .lp-skip { position: absolute; left: -9999px; top: 8px; background: var(--mint); color: var(--green-dark); padding: 8px 14px; z-index: 100; font-weight: 600; }
     .lp-skip:focus { left: 8px; }
 
-    /* ---------- Buttons ---------- */
+    /* Buttons */
     .lp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 600 14px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; padding: 16px 28px; border: 2px solid transparent; border-radius: var(--radius); cursor: pointer; text-decoration: none; transition: .2s ease; }
     .lp-btn-primary { background: var(--mint); color: var(--green-dark); border-color: var(--mint); }
     .lp-btn-primary:hover { background: #fff; border-color: #fff; }
@@ -52,36 +68,40 @@
     .lp-btn-outline:hover { background: #fff; color: var(--green-dark); border-color: #fff; }
     .lp-btn-dark { background: var(--green-dark); color: #fff; border-color: var(--green-dark); }
     .lp-btn-dark:hover { background: var(--green); border-color: var(--green); }
+    .lp-btn-ghost { background: transparent; color: var(--green-dark); border-color: var(--green-dark); }
+    .lp-btn-ghost:hover { background: var(--green-dark); color: #fff; }
+    .lp-btn-sm { padding: 11px 16px; font-size: 12px; }
     .lp-btn-full { width: 100%; }
+    .lp-btn[disabled] { opacity: .6; cursor: wait; }
     .lp-arrow::after { content: "→"; font-size: 16px; transition: transform .2s; }
     .lp-arrow:hover::after { transform: translateX(4px); }
 
-    /* ---------- Utility bar + Header ---------- */
+    /* Topbar + header */
     .lp-topbar { background: #000; color: #cfd8d7; font-size: 12.5px; }
     .lp-topbar .lp-container { display: flex; justify-content: flex-end; gap: 24px; padding: 8px 0; }
     .lp-topbar a { text-decoration: none; opacity: .85; }
     .lp-topbar a:hover { opacity: 1; color: var(--mint); }
-
     .lp-header { position: sticky; top: 0; z-index: 50; background: var(--green-dark); border-bottom: 1px solid rgba(255,255,255,.08); }
     .lp-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 76px; }
     .lp-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
     .lp-logo-mark { width: 38px; height: 38px; display: grid; place-items: center; background: var(--mint); color: var(--green-dark); font: 700 22px var(--serif); border-radius: var(--radius); }
     .lp-logo-text { font: 600 24px var(--serif); letter-spacing: .02em; }
-    .lp-nav-links { display: flex; gap: 32px; }
-    .lp-nav-links a { color: #fff; text-decoration: none; font-size: 15px; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+    .lp-nav-links { display: flex; gap: 22px; }
+    .lp-nav-links a { color: #fff; text-decoration: none; font-size: 14.5px; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
     .lp-nav-links a:hover { border-color: var(--mint); }
     .lp-header .lp-btn { padding: 13px 22px; font-size: 12.5px; }
     .lp-burger { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
-    .lp-burger span { display: block; width: 26px; height: 2px; background: #fff; margin: 6px 0; transition: .2s; }
+    .lp-burger span { display: block; width: 26px; height: 2px; background: #fff; margin: 6px 0; }
 
-    /* ---------- Hero ---------- */
+    /* Hero */
     .lp-hero { background: var(--green-dark); color: #fff; position: relative; overflow: hidden; padding: 72px 0 0; }
     .lp-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
     .lp-tagline { color: var(--mint); font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 20px; }
     .lp-hero h1 { font-size: clamp(40px, 5.2vw, 68px); font-weight: 400; margin-bottom: 22px; }
     .lp-hero-sub { font-size: 18px; color: #c9d6d5; max-width: 520px; font-weight: 300; margin-bottom: 36px; }
+    .lp-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
     .lp-hero-media { position: relative; align-self: stretch; min-height: 460px; }
-    .lp-hero-main { position: absolute; inset: 0 0 0 0; }
+    .lp-hero-main { position: absolute; inset: 0; }
     .lp-hero-main img { width: 100%; height: 100%; object-fit: cover; }
     .lp-hero-badge { position: absolute; left: 0; bottom: 0; background: var(--mint); color: var(--green-dark); padding: 16px 22px; font-size: 14px; display: grid; gap: 2px; max-width: 80%; }
     .lp-hero-badge-label { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: 11.5px; }
@@ -90,43 +110,46 @@
     .lp-hero-mini-card { padding: 12px 14px 14px; font-size: 13px; line-height: 1.4; }
     .lp-label { display: inline-block; color: var(--green); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
 
-    /* Search panel (docked under hero, CBRE-style) */
+    /* Search panel */
     .lp-search-wrap { background: var(--green-mid); margin-top: 56px; }
     .lp-search-title { padding: 26px 0 0; font: 400 22px var(--serif); color: #fff; }
-    .lp-search { display: grid; grid-template-columns: 1.4fr 1fr 1fr auto; gap: 0; align-items: end; padding: 18px 0 30px; }
+    .lp-search { display: grid; grid-template-columns: 1.4fr 1fr 1fr auto; align-items: end; padding: 18px 0 30px; }
     .lp-field { display: flex; flex-direction: column; gap: 6px; }
     .lp-search .lp-field { padding-right: 16px; }
     .lp-field label { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
     .lp-search .lp-field label { color: var(--mint); }
-    .lp-field input, .lp-field select, .lp-field textarea { font: 400 16px var(--sans); color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 14px; width: 100%; }
-    .lp-field input:focus, .lp-field select:focus, .lp-field textarea:focus { outline: 2px solid var(--mint); outline-offset: 0; border-color: var(--green); }
+    .lp-field input, .lp-field select, .lp-field textarea { font: 400 16px var(--sans); color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; width: 100%; }
+    .lp-field input:focus, .lp-field select:focus, .lp-field textarea:focus, .lp-btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+    .lp-field input:focus, .lp-field select:focus, .lp-field textarea:focus { border-color: var(--green); }
     .lp-search .lp-btn { height: 51px; padding-inline: 32px; }
 
-    /* ---------- Stats band ---------- */
-    .lp-hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: #fff; border-bottom: 1px solid var(--line); }
+    /* Stats */
+    .lp-stats { background: #fff; border-bottom: 1px solid var(--line); }
     .lp-stats-inner { width: min(100% - 48px, var(--max)); margin-inline: auto; display: grid; grid-template-columns: repeat(3, 1fr); }
     .lp-stats-inner > div { padding: 36px 24px; border-left: 1px solid var(--line); }
     .lp-stats-inner > div:first-child { border-left: 0; padding-left: 0; }
     .lp-stats-inner strong { display: block; font: 500 clamp(34px, 4vw, 52px)/1 var(--serif); color: var(--green); margin-bottom: 8px; }
     .lp-stats-inner span { color: var(--muted); font-size: 15px; }
 
-    /* ---------- Sections ---------- */
+    /* Sections */
     .lp-section { padding: 88px 0; }
     .lp-section-muted { background: var(--bg-alt); }
-    .lp-section-head { max-width: 680px; margin-bottom: 48px; }
+    .lp-section-head { max-width: 680px; margin-bottom: 40px; }
     .lp-section-head h2 { font-size: clamp(32px, 4vw, 46px); margin-bottom: 14px; }
     .lp-section-head p { color: var(--muted); font-size: 18px; }
     .lp-eyebrow { color: var(--green); font-size: 12.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px; display: block; }
 
-    /* Steps */
-    .lp-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--green-dark); }
-    .lp-step { padding: 32px 32px 8px 0; }
-    .lp-step + .lp-step { padding-left: 32px; border-left: 1px solid var(--line); }
-    .lp-step-num { font: 500 44px var(--serif); color: var(--green); display: block; margin-bottom: 16px; }
-    .lp-step h3 { font-size: 26px; margin-bottom: 10px; }
-    .lp-step p { color: var(--muted); }
+    /* Listings toolbar */
+    .lp-results-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 24px; padding: 14px 18px; background: var(--bg-alt); border-left: 4px solid var(--green); }
+    .lp-results-bar p { font-size: 15px; }
+    .lp-results-bar strong { color: var(--green-dark); }
+    .lp-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .lp-tab { font: 600 13px var(--sans); letter-spacing: .04em; padding: 10px 18px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; border-radius: 999px; }
+    .lp-tab[aria-pressed="true"] { background: var(--green-dark); color: #fff; border-color: var(--green-dark); }
+    .lp-sort { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .lp-sort select { font: 400 14px var(--sans); padding: 8px 10px; border: 1px solid var(--line); background: #fff; }
 
-    /* Listing cards */
+    /* Cards */
     .lp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .lp-card { background: #fff; display: flex; flex-direction: column; border: 1px solid var(--line); transition: box-shadow .25s, transform .25s; }
     .lp-card:hover { box-shadow: 0 16px 36px rgba(1,42,45,.14); transform: translateY(-3px); }
@@ -141,19 +164,145 @@
     .lp-card-body h3 { font-size: 26px; margin-bottom: 6px; }
     .lp-card-location { color: var(--green); font-weight: 600; font-size: 14px; margin-bottom: 14px; }
     .lp-card-meta { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
-    .lp-card-footer { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+    .lp-card-footer { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
     .lp-price { font: 500 24px var(--serif); color: var(--green-dark); }
-    .lp-link-btn { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--green); border-bottom: 2px solid var(--mint); padding-bottom: 2px; }
+    .lp-card-actions { display: flex; gap: 14px; align-items: center; }
+    .lp-link-btn { font: 700 13px var(--sans); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--green); border: 0; border-bottom: 2px solid var(--mint); padding: 0 0 2px; background: none; cursor: pointer; }
     .lp-link-btn:hover { color: var(--green-dark); }
+    .lp-empty { grid-column: 1 / -1; padding: 48px 28px; text-align: center; background: var(--bg-alt); border: 1px dashed #b7c4c2; }
+    .lp-empty h3 { font-size: 26px; margin-bottom: 8px; }
+    .lp-empty p { color: var(--muted); margin-bottom: 20px; }
+    .lp-empty .lp-btn { margin: 4px; }
+
+    /* Calculator */
+    .lp-calc { display: grid; grid-template-columns: 1fr 1.15fr; gap: 0; background: #fff; border: 1px solid var(--line); }
+    .lp-calc-form { padding: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-content: start; }
+    .lp-calc-form .lp-field label { color: var(--green-dark); }
+    .lp-calc-form .lp-field small { color: var(--muted); font-size: 12.5px; }
+    .lp-span2 { grid-column: 1 / -1; }
+    .lp-check { display: flex; align-items: center; gap: 10px; font-size: 15px; cursor: pointer; }
+    .lp-check input { width: 18px; height: 18px; accent-color: var(--green); }
+    .lp-calc-out { background: var(--green-dark); color: #fff; padding: 36px; }
+    .lp-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,.14); margin-bottom: 26px; border: 1px solid rgba(255,255,255,.14); }
+    .lp-kpi { background: var(--green-dark); padding: 18px 20px; }
+    .lp-kpi span { display: block; color: #9fb4b2; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+    .lp-kpi strong { font: 500 26px var(--serif); color: #fff; }
+    .lp-kpi.lp-kpi-hl strong { color: var(--mint); }
+    .lp-table-wrap { max-height: 280px; overflow: auto; }
+    .lp-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .lp-table th, .lp-table td { text-align: right; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .lp-table th:first-child, .lp-table td:first-child { text-align: left; }
+    .lp-table th { color: var(--mint); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; position: sticky; top: 0; background: var(--green-dark); }
+    .lp-note { margin-top: 16px; font-size: 12.5px; color: #9fb4b2; }
+
+    /* Landlord / tenant panels */
+    .lp-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .lp-panel { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--green); padding: 40px 36px; display: flex; flex-direction: column; }
+    .lp-panel h3 { font-size: 28px; margin: 6px 0 12px; }
+    .lp-panel > p { color: var(--muted); margin-bottom: 20px; }
+    .lp-panel .lp-list { margin-bottom: 30px; }
+    .lp-panel .lp-list li { color: var(--ink); }
+    .lp-panel .lp-list li::before { background: var(--green); }
+    .lp-panel .lp-btn { align-self: flex-start; margin-top: auto; }
+    .lp-panel-dark { background: var(--green-dark); border-color: var(--green-dark); border-top-color: var(--mint); color: #fff; }
+    .lp-panel-dark > p { color: #c9d6d5; }
+    .lp-panel-dark .lp-label { color: var(--mint); }
+    .lp-panel-dark .lp-list li { color: #e8efee; }
+    .lp-panel-dark .lp-list li::before { background: var(--mint); }
+
+    /* Cards (services, markets, terms) */
+    .lp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+    .lp-svc, .lp-mkt, .lp-term { background: #fff; border: 1px solid var(--line); padding: 32px 30px; transition: box-shadow .25s, transform .25s; }
+    .lp-svc:hover, .lp-mkt:hover { box-shadow: 0 16px 36px rgba(1,42,45,.12); transform: translateY(-3px); }
+    .lp-svc h3, .lp-mkt h3, .lp-term h3 { font-size: 24px; margin-bottom: 10px; }
+    .lp-svc p, .lp-mkt p, .lp-term p { color: var(--muted); }
+    .lp-ico { width: 52px; height: 52px; display: grid; place-items: center; background: var(--mint-soft); color: var(--green); margin-bottom: 20px; }
+    .lp-ico svg { width: 26px; height: 26px; }
+    .lp-mkt { border-top: 4px solid var(--green); }
+    .lp-mkt .lp-label { margin-bottom: 8px; }
+    .lp-term { border-left: 4px solid var(--green); }
+    .lp-sub { font-size: 26px; margin: 56px 0 18px; }
+    .lp-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .lp-pills span { padding: 10px 18px; border: 1px solid var(--line); background: #fff; font-weight: 500; font-size: 15px; border-radius: 999px; }
+
+    /* Founder */
+    .lp-founder { background: var(--green-dark); color: #fff; }
+    .lp-founder .lp-section-head h2 { color: #fff; max-width: 860px; }
+    .lp-founder .lp-section-head { max-width: 860px; }
+    .lp-founder .lp-section-head p { color: #c9d6d5; }
+    .lp-founder-grid { display: grid; grid-template-columns: 380px 1fr; gap: 56px; align-items: start; }
+    .lp-fcard { background: var(--green-mid); border: 1px solid rgba(255,255,255,.12); border-top: 4px solid var(--mint); padding: 34px 30px; }
+    .lp-avatar { width: 96px; height: 96px; border-radius: 50%; background: var(--mint); color: var(--green-dark); display: grid; place-items: center; font: 600 38px var(--serif); margin-bottom: 20px; }
+    .lp-fcard h3 { font-size: 30px; color: #fff; margin-bottom: 4px; }
+    .lp-fcard .lp-role { color: var(--mint); font-weight: 600; font-size: 14.5px; }
+    .lp-fcard .lp-loc { color: #9fb4b2; font-size: 14px; margin: 4px 0 0; }
+    .lp-chipset { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0; }
+    .lp-chipset span { border: 1px solid rgba(255,255,255,.25); padding: 6px 12px; font-size: 12.5px; border-radius: 999px; color: #e8efee; }
+    .lp-edu { color: #b9c8c6; font-size: 14px; margin-bottom: 22px; }
+    .lp-fcard .lp-link-btn { color: var(--mint); }
+    .lp-fcard .lp-link-btn:hover { color: #fff; }
+    .lp-quote { margin: 0 0 28px; padding-left: 24px; border-left: 3px solid var(--mint); font: 400 clamp(22px, 2.6vw, 30px)/1.3 var(--serif); color: #fff; }
+    .lp-quote cite { display: block; margin-top: 12px; font: 500 14px var(--sans); color: var(--mint); font-style: normal; letter-spacing: .06em; text-transform: uppercase; }
+    .lp-founder-copy > p { color: #c9d6d5; font-size: 17px; margin-bottom: 16px; }
+    .lp-fsub { font-size: 24px; margin: 34px 0 16px; color: #fff; }
+    .lp-founder-pts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.14); }
+    .lp-founder-pts > div { background: var(--green-dark); padding: 20px 20px 22px; }
+    .lp-founder-pts strong { display: block; color: var(--mint); font: 600 15px var(--sans); margin-bottom: 8px; }
+    .lp-founder-pts span { color: #c9d6d5; font-size: 14.5px; line-height: 1.5; display: block; }
+    .lp-fsub-tl { margin-top: 64px; }
+    .lp-timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0; border-top: 2px solid rgba(255,255,255,.25); }
+    .lp-timeline > div { padding: 24px 22px 8px 0; position: relative; display: flex; flex-direction: column; gap: 4px; }
+    .lp-timeline > div::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--green-dark); border: 2px solid rgba(255,255,255,.5); }
+    .lp-timeline > div.lp-now::before { background: var(--mint); border-color: var(--mint); }
+    .lp-yr { color: var(--mint); font: 600 13px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+    .lp-timeline strong { font: 500 24px var(--serif); color: #fff; }
+    .lp-timeline span:last-child { color: #b9c8c6; font-size: 14px; line-height: 1.45; }
+
+    /* Comparison table */
+    .lp-tbl-wrap { overflow-x: auto; border: 1px solid var(--line); background: #fff; }
+    .lp-tbl { width: 100%; min-width: 820px; border-collapse: collapse; font-size: 15.5px; }
+    .lp-tbl th { background: var(--green-dark); color: #fff; text-align: left; padding: 16px 18px; font: 600 12.5px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+    .lp-tbl td { padding: 18px; border-top: 1px solid var(--line); vertical-align: top; color: var(--muted); }
+    .lp-tbl td:first-child { color: var(--green-dark); font-weight: 600; }
+    .lp-tbl tbody tr:nth-child(even) { background: var(--bg-alt); }
+    .lp-tbl-foot { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; margin-top: 24px; }
+    .lp-tbl-foot p { color: var(--muted); max-width: 640px; }
+
+    /* FAQ */
+    .lp-faq { max-width: 880px; display: grid; gap: 12px; }
+    .lp-faq details { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--green); }
+    .lp-faq summary { cursor: pointer; list-style: none; padding: 20px 56px 20px 24px; font: 500 21px/1.3 var(--serif); position: relative; }
+    .lp-faq summary::-webkit-details-marker { display: none; }
+    .lp-faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font: 400 28px var(--sans); color: var(--green); }
+    .lp-faq details[open] summary::after { content: "\2013"; }
+    .lp-faq details p { padding: 0 24px 22px; color: var(--muted); }
+
+    /* CTA band + floating WhatsApp */
+    .lp-cta { background: var(--green); color: #fff; padding: 64px 0; }
+    .lp-cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .lp-cta h2 { font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 8px; max-width: 640px; }
+    .lp-cta p { color: #d4ebe2; font-size: 17px; }
+    .lp-cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .lp-fab { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.28); }
+    .lp-fab img { width: 34px; height: 34px; }
+    .lp-section-muted .lp-results-bar { background: #fff; }
+
+    /* Steps */
+    .lp-steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--green-dark); }
+    .lp-step { padding: 32px 32px 8px 0; }
+    .lp-step + .lp-step { padding-left: 32px; border-left: 1px solid var(--line); }
+    .lp-step-num { font: 500 44px var(--serif); color: var(--green); display: block; margin-bottom: 16px; }
+    .lp-step h3 { font-size: 26px; margin-bottom: 10px; }
+    .lp-step p { color: var(--muted); }
 
     /* Owners */
-    .lp-owners { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; background: var(--green-dark); color: #fff; width: min(100% - 48px, var(--max)); margin-inline: auto; }
+    .lp-owners { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; background: var(--green-dark); color: #fff; width: min(100% - 48px, var(--max)); margin-inline: auto; }
     .lp-owners-copy { padding: 64px 56px; }
     .lp-owners-copy h2 { font-size: clamp(30px, 3.4vw, 42px); margin-bottom: 18px; }
     .lp-owners-copy > p { color: #c9d6d5; font-size: 17px; margin-bottom: 24px; }
     .lp-list { list-style: none; padding: 0; margin: 0 0 34px; display: grid; gap: 12px; }
     .lp-list li { padding-left: 30px; position: relative; color: #e8efee; }
-    .lp-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 16px; height: 2px; background: var(--mint); }
+    .lp-list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 16px; height: 2px; background: var(--mint); }
     .lp-owners-media img { width: 100%; height: 100%; object-fit: cover; min-height: 340px; }
 
     /* Contact */
@@ -165,12 +314,16 @@
     .lp-contact-meta a:hover { border-color: var(--green); color: var(--green); }
     .lp-wa-contact { display: flex; align-items: center; gap: 10px; }
     .lp-wa-inline { width: 22px; height: 22px; }
-    .lp-contact-form { background: var(--bg-alt); padding: 36px; display: grid; gap: 18px; border-top: 4px solid var(--green); }
+    .lp-contact-form { background: #fff; padding: 36px; display: grid; gap: 18px; border-top: 4px solid var(--green); }
     .lp-contact-form .lp-field label { color: var(--green-dark); }
     .lp-contact-form textarea { resize: vertical; }
+    .lp-hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+    .lp-status { font-size: 15px; padding: 12px 14px; display: none; }
+    .lp-status.is-ok { display: block; background: var(--mint-soft); color: var(--green-dark); border-left: 4px solid var(--green); }
+    .lp-status.is-err { display: block; background: #fdeaea; color: #7a1f1f; border-left: 4px solid #c0392b; }
 
-    /* ---------- Footer ---------- */
-    .lp-footer { background: var(--green-dark); color: #b9c8c6; padding: 64px 0 0; margin-top: 0; }
+    /* Footer */
+    .lp-footer { background: var(--green-dark); color: #b9c8c6; padding: 64px 0 0; }
     .lp-footer-cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; }
     .lp-footer h4 { color: #fff; font: 600 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; margin: 0 0 16px; }
     .lp-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 15px; }
@@ -179,9 +332,10 @@
     .lp-footer-brand p { margin-top: 16px; max-width: 300px; font-size: 15px; }
     .lp-footer-inner { border-top: 1px solid rgba(255,255,255,.12); padding: 22px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13.5px; }
 
-    /* ---------- Responsive ---------- */
-    @media (max-width: 980px) {
-      .lp-hero-grid, .lp-owners, .lp-contact { grid-template-columns: 1fr; }
+    /* Responsive */
+    @media (max-width: 1020px) {
+      .lp-hero-grid, .lp-owners, .lp-contact, .lp-calc, .lp-duo, .lp-founder-grid { grid-template-columns: 1fr; }
+      .lp-founder-pts { grid-template-columns: 1fr; }
       .lp-hero-media { min-height: 360px; }
       .lp-hero-mini { right: 12px; }
       .lp-search { grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -194,7 +348,7 @@
       .lp-contact { gap: 40px; }
       .lp-owners-copy { padding: 44px 28px; }
     }
-    @media (max-width: 820px) {
+    @media (max-width: 1100px) {
       .lp-burger { display: block; }
       .lp-header .lp-btn { display: none; }
       .lp-nav-links { position: absolute; left: 0; right: 0; top: 100%; background: var(--green-dark); flex-direction: column; gap: 0; padding: 8px 24px 20px; display: none; border-top: 1px solid rgba(255,255,255,.1); }
@@ -203,13 +357,13 @@
     }
     @media (max-width: 620px) {
       .lp-section { padding: 60px 0; }
-      .lp-grid, .lp-footer-cols { grid-template-columns: 1fr; }
-      .lp-search { grid-template-columns: 1fr; }
+      .lp-grid, .lp-footer-cols, .lp-search, .lp-calc-form, .lp-kpis { grid-template-columns: 1fr; }
       .lp-stats-inner { grid-template-columns: 1fr; }
       .lp-stats-inner > div, .lp-stats-inner > div:first-child { border-left: 0; padding: 22px 0; border-bottom: 1px solid var(--line); }
-      .lp-hero-mini { display: none; }
-      .lp-contact-form { padding: 24px; }
-      .lp-topbar { display: none; }
+      .lp-hero-mini, .lp-topbar { display: none; }
+      .lp-contact-form, .lp-calc-form, .lp-calc-out, .lp-panel, .lp-fcard { padding: 24px; }
+      .lp-cards { grid-template-columns: 1fr; }
+      .lp-cta { padding: 48px 0; }
     }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
   </style>
@@ -236,12 +390,14 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="lp-nav-links" id="primary-nav" aria-label="Primary">
-      <a href="#listings">Find a property</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#owners">For owners</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">Why LeaseProp</a>
+      <a href="#services">Services</a>
+      <a href="#founder">Founder</a>
+      <a href="#listings">Early listings</a>
+      <a href="#calculator">Lease calculator</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <a href="#contact" class="lp-btn lp-btn-outline">List your property</a>
+    <a href="#contact" class="lp-btn lp-btn-outline">Partner with us</a>
   </div>
 </header>
 
@@ -250,38 +406,40 @@
   <section class="lp-hero">
     <div class="lp-container lp-hero-grid">
       <div class="lp-hero-copy">
-        <p class="lp-tagline">Smart leasing for modern businesses</p>
-        <h1>Lease prime commercial spaces with LeaseProp.</h1>
+        <p class="lp-tagline">A new leasing incubator · Noida &amp; NCR</p>
+        <h1>The leasing incubator between landlords and tenants.</h1>
         <p class="lp-hero-sub">
-          Discover verified offices, retail and flexible workspaces with transparent pricing,
-          curated for growing brands and enterprises.
+          LeaseProp is a newly launched company that works between property owners and businesses looking for space. We help landlords get lease-ready, help tenants define what they need, and
+          guide both sides to a signed lease.
         </p>
-        <a href="#listings" class="lp-btn lp-btn-primary lp-arrow">Explore listings</a>
+        <div class="lp-hero-actions">
+          <a href="#contact" class="lp-btn lp-btn-primary lp-arrow" data-role="Tenant">I need space</a>
+          <a href="#contact" class="lp-btn lp-btn-outline" data-role="Landlord">I have space to lease</a>
+        </div>
       </div>
 
       <div class="lp-hero-media">
         <div class="lp-hero-main">
           <img src="assets/img/hero-building.jpg" alt="Modern glass office building" width="800" height="600" />
           <div class="lp-hero-badge">
-            <span class="lp-hero-badge-label">Featured tower</span>
-            <span>32-storey Grade-A office · Sector 62</span>
+            <span class="lp-hero-badge-label">Now launching</span>
+            <span>Onboarding founding landlords &amp; tenants</span>
           </div>
         </div>
         <div class="lp-hero-mini">
           <img src="assets/img/hero-office.jpg" alt="Premium office interior" width="400" height="300" loading="lazy" />
           <div class="lp-hero-mini-card">
-            <span class="lp-label">New listing</span>
-            <p>Plug-and-play furnished office · 120 seats</p>
+            <span class="lp-label">Founding partners</span>
+            <p>Priority onboarding for our first landlords and tenants</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Search panel -->
     <div class="lp-search-wrap">
       <div class="lp-container">
         <p class="lp-search-title">Looking for commercial space for lease?</p>
-        <form class="lp-search" action="#listings" method="get" role="search">
+        <form class="lp-search" id="search-form" role="search">
           <div class="lp-field">
             <label for="s-location">Location</label>
             <input id="s-location" name="location" type="text" placeholder="e.g. Sector 62, Noida" autocomplete="off" />
@@ -289,6 +447,7 @@
           <div class="lp-field">
             <label for="s-type">Space type</label>
             <select id="s-type" name="type">
+              <option value="all">All types</option>
               <option>Office</option>
               <option>Retail</option>
               <option>Co-working</option>
@@ -298,10 +457,10 @@
           <div class="lp-field">
             <label for="s-size">Size (sq ft)</label>
             <select id="s-size" name="size">
-              <option>Any</option>
-              <option>500 – 2,000</option>
-              <option>2,000 – 10,000</option>
-              <option>10,000+</option>
+              <option value="any">Any</option>
+              <option value="small">500 – 2,000</option>
+              <option value="mid">2,000 – 10,000</option>
+              <option value="large">10,000+</option>
             </select>
           </div>
           <button type="submit" class="lp-btn lp-btn-primary">Search</button>
@@ -310,72 +469,189 @@
     </div>
   </section>
 
-  <!-- STATS BAND -->
-  <div class="lp-hero-stats" style="display:block;">
+  <!-- HIGHLIGHTS -->
+  <div class="lp-stats">
     <div class="lp-stats-inner">
-      <div><strong>3</strong><span>Featured listings</span></div>
-      <div><strong>4</strong><span>Space types</span></div>
-      <div><strong>Delhi NCR</strong><span>Business districts</span></div>
+      <div><strong>Noida &amp; NCR</strong><span>Our home market</span></div>
+      <div><strong>18+ years</strong><span>Founder's technology and management experience</span></div>
+      <div><strong>Open</strong><span>Founding partner programme</span></div>
     </div>
   </div>
 
-  <!-- LISTINGS -->
-  <section id="listings" class="lp-section">
+  <!-- ABOUT -->
+  <section id="about" class="lp-section lp-section-muted">
     <div class="lp-container">
       <header class="lp-section-head">
-        <span class="lp-eyebrow">Find a property</span>
-        <h2>Featured commercial listings</h2>
-        <p>Handpicked properties ready for immediate lease.</p>
+        <span class="lp-eyebrow">Why LeaseProp</span>
+        <h2>A leasing incubator, not just another listings site.</h2>
+        <p>
+          Leases stall when landlords and tenants start from different places: one needs a dependable
+          tenant, the other needs the right space on workable terms. LeaseProp is a new company built to
+          sit in the middle and nurture both sides until a lease is signed.
+        </p>
       </header>
 
-      <div class="lp-grid">
-        <article class="lp-card">
-          <div class="lp-card-img">
-            <img src="assets/img/listing-office-tower.jpg" alt="Glass façade office tower" width="600" height="400" loading="lazy" />
-            <span class="lp-chip lp-chip-green">Office · For lease</span>
-          </div>
-          <div class="lp-card-body">
-            <h3>Skyline Business Park</h3>
-            <p class="lp-card-location">Sector 62 · Noida</p>
-            <div class="lp-card-meta"><span>25,000 sq ft · Warm shell</span></div>
-            <div class="lp-card-footer">
-              <span class="lp-price">₹95 / sq ft</span>
-              <a class="lp-link-btn" href="#contact" data-listing="Skyline Business Park">View details</a>
-            </div>
-          </div>
+      <div class="lp-duo">
+        <article class="lp-panel">
+          <span class="lp-label">For tenants</span>
+          <h3>From &ldquo;we need space&rdquo; to a clear brief and a short list.</h3>
+          <p>Businesses, startups and growing teams get a partner who works on their side of the table.</p>
+          <ul class="lp-list">
+            <li>Turn a rough idea into a clear requirement: size, budget, location, timeline.</li>
+            <li>Shortlists of realistic options, with site visits arranged for you.</li>
+            <li>Negotiation support and help coordinating lease paperwork.</li>
+            <li>Flexible and co-working options for teams that are still growing.</li>
+          </ul>
+          <a href="#contact" class="lp-btn lp-btn-dark lp-arrow" data-role="Tenant">Share your requirement</a>
         </article>
 
-        <article class="lp-card">
-          <div class="lp-card-img">
-            <img src="assets/img/listing-retail.jpg" alt="High street retail frontage" width="600" height="400" loading="lazy" />
-            <span class="lp-chip lp-chip-amber">Retail · For lease</span>
-          </div>
-          <div class="lp-card-body">
-            <h3>Central High Street</h3>
-            <p class="lp-card-location">Golf Course Road · Gurugram</p>
-            <div class="lp-card-meta"><span>Ground + 2 floors · Corner unit</span></div>
-            <div class="lp-card-footer">
-              <span class="lp-price">₹220 / sq ft</span>
-              <a class="lp-link-btn" href="#contact" data-listing="Central High Street">View details</a>
-            </div>
-          </div>
+        <article class="lp-panel lp-panel-dark">
+          <span class="lp-label">For landlords</span>
+          <h3>Get your property lease-ready and in front of the right tenants.</h3>
+          <p>Property owners get hands-on help instead of waiting for enquiries to arrive.</p>
+          <ul class="lp-list">
+            <li>Positioning and pricing guidance so your space is ready to lease.</li>
+            <li>Introductions to suitable, serious tenants.</li>
+            <li>Support through negotiation, documentation and handover.</li>
+            <li>One point of contact for the whole process.</li>
+          </ul>
+          <a href="#contact" class="lp-btn lp-btn-primary lp-arrow" data-role="Landlord">List your property</a>
         </article>
+      </div>
+    </div>
+  </section>
 
-        <article class="lp-card">
-          <div class="lp-card-img">
-            <img src="assets/img/listing-cowork.jpg" alt="Coworking office interior" width="600" height="400" loading="lazy" />
-            <span class="lp-chip lp-chip-blue">Co-working</span>
+  <!-- SERVICES -->
+  <section id="services" class="lp-section">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow">What we do</span>
+        <h2>Leasing and workspace solutions, end to end.</h2>
+        <p>From a single co-working seat to a full office floor, LeaseProp supports both sides of the lease with a technology-first approach.</p>
+      </header>
+      <div class="lp-cards">
+        <article class="lp-svc">
+          <span class="lp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></span>
+          <h3>Commercial office leasing</h3>
+          <p>Office space leasing and property aggregation across Noida, Greater Noida and the wider NCR.</p>
+        </article>
+        <article class="lp-svc">
+          <span class="lp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></span>
+          <h3>Requirements and tenant acquisition</h3>
+          <p>We turn a business requirement into a clear brief and shortlist, and bring genuine corporate tenants to landlords.</p>
+        </article>
+        <article class="lp-svc">
+          <span class="lp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+          <h3>Managed offices and co-working</h3>
+          <p>Plug-and-play and managed workspace options for teams that want to move in quickly.</p>
+        </article>
+        <article class="lp-svc">
+          <span class="lp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20v-6M11 20V9M16 20v-9M21 20V5"/></svg></span>
+          <h3>Startups to established businesses</h3>
+          <p>Right-sized space today, with a clear path to expand as your headcount grows.</p>
+        </article>
+        <article class="lp-svc">
+          <span class="lp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M7 7v4M11 7v3M15 7v4M19 7v3"/></svg></span>
+          <h3>Workspace planning</h3>
+          <p>Space planning and customised office solutions built around your team size and way of working.</p>
+        </article>
+        <article class="lp-svc">
+          <span class="lp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg></span>
+          <h3>Technology-enabled discovery</h3>
+          <p>We are building tools, like the search and lease calculator on this site, to make finding and comparing space simpler.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section id="founder" class="lp-section lp-founder">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow" style="color:var(--mint)">Meet the founder</span>
+        <h2>18+ years of technology and management experience, now applied to property leasing.</h2>
+        <p>LeaseProp is led by a founder who has spent his career designing systems, managing stakeholders and delivering complex projects end to end.</p>
+      </header>
+
+      <div class="lp-founder-grid">
+        <aside class="lp-fcard">
+          <div class="lp-avatar" aria-hidden="true">AP</div>
+          <h3>Ankur Parashar</h3>
+          <p class="lp-role">Founder &amp; Director, LeaseProp</p>
+          <p class="lp-loc">Noida, Uttar Pradesh</p>
+          <div class="lp-chipset">
+            <span>18+ years in IT</span>
+            <span>Solution architecture</span>
+            <span>Business analysis</span>
+            <span>Stakeholder management</span>
+            <span>Sun Certified Java Programmer</span>
+            <span>Sun Certified Web Component Developer</span>
           </div>
-          <div class="lp-card-body">
-            <h3>Hubwork Tower</h3>
-            <p class="lp-card-location">Connaught Place · New Delhi</p>
-            <div class="lp-card-meta"><span>120 desks · Managed</span></div>
-            <div class="lp-card-footer">
-              <span class="lp-price">₹12,500 / seat</span>
-              <a class="lp-link-btn" href="#contact" data-listing="Hubwork Tower">View details</a>
+          <p class="lp-edu">Bachelor's degree, Computer Science<br />ABES Engineering College</p>
+          <a class="lp-link-btn" href="https://www.linkedin.com/in/ankur-parashar-27039610" target="_blank" rel="noopener noreferrer">View LinkedIn profile</a>
+        </aside>
+
+        <div class="lp-founder-copy">
+          <blockquote class="lp-quote">
+            &ldquo;I believe commercial real estate should be more transparent, accessible and efficient.&rdquo;
+            <cite>Ankur Parashar</cite>
+          </blockquote>
+          <p>
+            Ankur is a technology professional turned entrepreneur. Across more than 18 years in the IT industry he has built
+            enterprise applications and cloud-native platforms, worked with BFSI and enterprise clients, and held architecture
+            roles at IBM and Cognizant.
+          </p>
+          <p>
+            He founded LeaseProp to bring that same structure to commercial real estate: clear requirements, honest information
+            and a process that both landlords and tenants can follow. The focus is on helping businesses find the right office
+            space and helping property owners connect with genuine corporate tenants.
+          </p>
+
+          <h3 class="lp-fsub">Why this experience helps in leasing</h3>
+          <div class="lp-founder-pts">
+            <div>
+              <strong>Structured requirements</strong>
+              <span>Years of turning vague business needs into clear specifications now go into defining a tenant's space brief.</span>
+            </div>
+            <div>
+              <strong>Managing many parties</strong>
+              <span>A lease involves owners, tenants, advisors and approvers. Aligning stakeholders on one outcome is familiar ground.</span>
+            </div>
+            <div>
+              <strong>Transparency through technology</strong>
+              <span>Search, comparison and estimation tools replace guesswork, so both sides see the same information.</span>
             </div>
           </div>
-        </article>
+        </div>
+      </div>
+
+      <h3 class="lp-fsub lp-fsub-tl">Career journey</h3>
+      <div class="lp-timeline">
+        <div>
+          <span class="lp-yr">2009 &ndash; 2011</span>
+          <strong>HCLTech</strong>
+          <span>Consultant &middot; enterprise application development</span>
+        </div>
+        <div>
+          <span class="lp-yr">2011 &ndash; 2015</span>
+          <strong>Coforge</strong>
+          <span>Technology Consultant</span>
+        </div>
+        <div>
+          <span class="lp-yr">2015 &ndash; 2022</span>
+          <strong>IBM India</strong>
+          <span>Application Architect &middot; cloud-native applications for BFSI clients</span>
+        </div>
+        <div>
+          <span class="lp-yr">2022 &ndash; 2026</span>
+          <strong>Cognizant</strong>
+          <span>Solutions Architect &middot; event-driven, cloud-native microservices on AWS</span>
+        </div>
+        <div class="lp-now">
+          <span class="lp-yr">2026 &ndash; Present</span>
+          <strong>LeaseProp</strong>
+          <span>Founder &amp; Director &middot; commercial leasing and workspace solutions</span>
+        </div>
       </div>
     </div>
   </section>
@@ -386,44 +662,166 @@
       <header class="lp-section-head">
         <span class="lp-eyebrow">How we work</span>
         <h2>How LeaseProp works</h2>
-        <p>Simple steps to match tenants with the right commercial space.</p>
+        <p>One partner between both sides of the lease, from first conversation to handover.</p>
       </header>
       <div class="lp-steps">
         <article class="lp-step">
           <span class="lp-step-num">01</span>
-          <h3>Share your requirement</h3>
-          <p>Tell LeaseProp about your size, location, budget and brand needs.</p>
+          <h3>Tell us your side</h3>
+          <p>Tenants share size, location, budget and timeline. Landlords share the property, expectations and availability.</p>
         </article>
         <article class="lp-step">
           <span class="lp-step-num">02</span>
-          <h3>Get curated options</h3>
-          <p>Receive a shortlist of verified spaces with floor plans and details.</p>
+          <h3>We prepare and match</h3>
+          <p>We sharpen the brief, get the property lease-ready and shortlist realistic matches for both sides.</p>
         </article>
         <article class="lp-step">
           <span class="lp-step-num">03</span>
-          <h3>Visit &amp; close faster</h3>
-          <p>Schedule visits, negotiate terms and sign leases with expert support.</p>
+          <h3>We facilitate to signing</h3>
+          <p>Site visits, negotiation support and paperwork coordination until the lease is signed and the space handed over.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- WORKSPACE OPTIONS -->
+  <section id="workspaces" class="lp-section">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow">Workspace options</span>
+        <h2>Which kind of workspace fits you?</h2>
+        <p>A quick comparison of the most common office formats. These are typical characteristics only; every property and operator is different.</p>
+      </header>
+      <div class="lp-tbl-wrap">
+        <table class="lp-tbl">
+          <thead>
+            <tr><th>Format</th><th>Best for</th><th>What you get</th><th>Commitment</th><th>Cost profile</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Co-working seat</td><td>Freelancers, solo founders, very small teams</td><td>Shared desk and amenities, ready on day one</td><td>Short and flexible</td><td>Pay per seat, almost no set-up cost</td></tr>
+            <tr><td>Private cabin or managed suite</td><td>Small and growing teams</td><td>Furnished, serviced private space</td><td>Short to medium</td><td>Monthly all-inclusive fee</td></tr>
+            <tr><td>Managed office floor</td><td>Teams wanting a branded space without a fit-out project</td><td>Furnished and customised, run by an operator</td><td>Medium to long</td><td>Higher monthly fee, low upfront spend</td></tr>
+            <tr><td>Warm-shell office</td><td>Established companies with their own design needs</td><td>Base services in place; tenant builds the interiors</td><td>Long term</td><td>Lower rent, fit-out cost paid upfront</td></tr>
+            <tr><td>Retail or showroom unit</td><td>Brands that need street or mall frontage</td><td>Unit with frontage; tenant fits out</td><td>Long term</td><td>Rent plus fit-out; location drives price</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="lp-tbl-foot">
+        <p>Not sure which format fits? Tell us your headcount, budget and timeline and we will recommend where to start.</p>
+        <a href="#contact" class="lp-btn lp-btn-dark lp-arrow" data-role="Tenant">Get a recommendation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTINGS -->
+  <section id="listings" class="lp-section lp-section-muted">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow">Early listings</span>
+        <h2>Spaces from our launch pipeline</h2>
+        <p>A first look at spaces we are working on. Rates are indicative; we confirm availability and terms on enquiry, and if nothing fits we will help source it.</p>
+      </header>
+
+      <div class="lp-tabs" id="type-tabs" role="group" aria-label="Filter by space type"></div>
+
+      <div class="lp-results-bar">
+        <p id="results-count" role="status" aria-live="polite"></p>
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <label class="lp-sort">Sort by
+            <select id="sort-by">
+              <option value="default">Featured</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="size-desc">Size: large to small</option>
+            </select>
+          </label>
+          <button type="button" class="lp-btn lp-btn-ghost lp-btn-sm" id="reset-filters">Reset filters</button>
+        </div>
+      </div>
+
+      <div class="lp-grid" id="listing-grid"></div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calculator" class="lp-section">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow">Plan your budget</span>
+        <h2>Lease cost calculator</h2>
+        <p>Estimate monthly rent, security deposit and total cost over your lease term, including yearly escalation.</p>
+      </header>
+
+      <div class="lp-calc">
+        <form class="lp-calc-form" id="calc-form" onsubmit="return false;">
+          <div class="lp-field">
+            <label for="k-area">Area (sq ft)</label>
+            <input id="k-area" type="number" min="1" step="1" value="5000" inputmode="numeric" />
+          </div>
+          <div class="lp-field">
+            <label for="k-rate">Rent (₹ / sq ft / month)</label>
+            <input id="k-rate" type="number" min="0" step="0.5" value="95" inputmode="decimal" />
+          </div>
+          <div class="lp-field">
+            <label for="k-cam">Maintenance (₹ / sq ft / month)</label>
+            <input id="k-cam" type="number" min="0" step="0.5" value="0" inputmode="decimal" />
+            <small>Common area charges, if billed separately</small>
+          </div>
+          <div class="lp-field">
+            <label for="k-years">Lease term (years)</label>
+            <input id="k-years" type="number" min="1" max="30" step="1" value="5" inputmode="numeric" />
+          </div>
+          <div class="lp-field">
+            <label for="k-esc">Yearly escalation (%)</label>
+            <input id="k-esc" type="number" min="0" max="50" step="0.5" value="5" inputmode="decimal" />
+          </div>
+          <div class="lp-field">
+            <label for="k-dep">Security deposit (months of rent)</label>
+            <input id="k-dep" type="number" min="0" max="24" step="1" value="6" inputmode="numeric" />
+          </div>
+          <label class="lp-check lp-span2">
+            <input type="checkbox" id="k-gst" checked /> Add GST at 18% on rent and maintenance
+          </label>
+          <div class="lp-span2">
+            <button type="button" class="lp-btn lp-btn-dark" id="calc-enquire">Enquire with these numbers</button>
+          </div>
+        </form>
+
+        <div class="lp-calc-out" aria-live="polite">
+          <div class="lp-kpis">
+            <div class="lp-kpi"><span>Monthly payable (year 1)</span><strong id="o-monthly">–</strong></div>
+            <div class="lp-kpi"><span>Security deposit</span><strong id="o-deposit">–</strong></div>
+            <div class="lp-kpi lp-kpi-hl"><span>Total over lease term</span><strong id="o-total">–</strong></div>
+            <div class="lp-kpi"><span>Avg. cost / sq ft / month</span><strong id="o-avg">–</strong></div>
+          </div>
+          <div class="lp-table-wrap">
+            <table class="lp-table">
+              <thead><tr><th>Year</th><th>Rent / month</th><th>Total / year</th></tr></thead>
+              <tbody id="o-rows"></tbody>
+            </table>
+          </div>
+          <p class="lp-note">Indicative estimate only. Listing prices are treated as ₹ per sq ft per month. The deposit is refundable and is not included in the total. Final terms are set in the lease agreement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOR OWNERS -->
-  <section id="owners" class="lp-section">
+  <section id="owners" class="lp-section lp-section-muted">
     <div class="lp-owners">
       <div class="lp-owners-copy">
-        <span class="lp-eyebrow" style="color:var(--mint)">For owners</span>
-        <h2>List your commercial property with LeaseProp</h2>
+        <span class="lp-eyebrow" style="color:var(--mint)">For landlords</span>
+        <h2>Bring your property to LeaseProp</h2>
         <p>
-          Reach verified corporate and retail tenants, reduce vacancy and manage viewings
-          and negotiations through one platform.
+          As a new company we give every landlord hands-on attention: we help you get lease-ready, find suitable tenants and stay involved until
+          the lease is signed.
         </p>
         <ul class="lp-list">
-          <li>Dedicated relationship manager for each asset.</li>
-          <li>Marketing across business networks and portals.</li>
-          <li>Support with documentation, compliance and handover.</li>
+          <li>Hands-on onboarding while we build our founding portfolio.</li>
+          <li>Positioning and pricing guidance to make your space lease-ready.</li>
+          <li>Support with negotiation, documentation and handover.</li>
         </ul>
-        <a href="#contact" class="lp-btn lp-btn-primary lp-arrow">Talk to an advisor</a>
+        <a href="#contact" class="lp-btn lp-btn-primary lp-arrow" id="owner-cta" data-role="Landlord">List your property</a>
       </div>
       <div class="lp-owners-media">
         <img src="assets/img/owners-meeting.jpg" alt="Property owners meeting tenants" width="600" height="400" loading="lazy" />
@@ -431,23 +829,167 @@
     </div>
   </section>
 
+  <!-- MARKETS -->
+  <section id="markets" class="lp-section">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow">Where we work</span>
+        <h2>Rooted in Noida, built for the wider NCR.</h2>
+        <p>Our initial focus is Noida and Greater Noida, with the wider NCR market alongside.</p>
+      </header>
+      <div class="lp-cards">
+        <article class="lp-mkt">
+          <span class="lp-label">Home market</span>
+          <h3>Noida</h3>
+          <p>Office clusters across the city's sectors and expressway corridors, home to IT, ITES and corporate occupiers.</p>
+        </article>
+        <article class="lp-mkt">
+          <span class="lp-label">Home market</span>
+          <h3>Greater Noida</h3>
+          <p>Emerging business districts with options for larger floorplates and growth-stage occupiers.</p>
+        </article>
+        <article class="lp-mkt">
+          <span class="lp-label">Wider NCR</span>
+          <h3>Gurugram, New Delhi and beyond</h3>
+          <p>For tenants and landlords who want a single partner across the region.</p>
+        </article>
+      </div>
+
+      <h3 class="lp-sub">Who we work with</h3>
+      <div class="lp-pills">
+        <span>Startups and new ventures</span>
+        <span>IT and ITES companies</span>
+        <span>BFSI and corporate offices</span>
+        <span>Professional services firms</span>
+        <span>Retail and showroom brands</span>
+        <span>Property owners and developers</span>
+        <span>Co-working and managed-office operators</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEASE ESSENTIALS -->
+  <section id="essentials" class="lp-section lp-section-muted">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow">Lease essentials</span>
+        <h2>Lease terms, explained.</h2>
+        <p>A short glossary to help both sides negotiate with confidence. This is general information, not legal or tax advice.</p>
+      </header>
+      <div class="lp-cards">
+        <article class="lp-term">
+          <h3>Lock-in period</h3>
+          <p>A period during which neither side can exit without penalty. Longer lock-ins can help a tenant negotiate a better rent.</p>
+        </article>
+        <article class="lp-term">
+          <h3>Rent escalation</h3>
+          <p>A planned rent increase, often applied yearly or at a set interval. Test different rates in the lease calculator above.</p>
+        </article>
+        <article class="lp-term">
+          <h3>Security deposit</h3>
+          <p>A refundable amount held by the landlord, usually expressed as a number of months of rent.</p>
+        </article>
+        <article class="lp-term">
+          <h3>Rent-free fit-out period</h3>
+          <p>Time given to build interiors before rent starts. It is often negotiable, especially on longer leases.</p>
+        </article>
+        <article class="lp-term">
+          <h3>Maintenance (CAM)</h3>
+          <p>Common area maintenance for shared services such as lifts, security and power backup. In many buildings it is billed on top of rent.</p>
+        </article>
+        <article class="lp-term">
+          <h3>GST, stamp duty and registration</h3>
+          <p>Commercial rent may attract GST, and lease agreements are subject to stamp duty and registration rules that vary by state. Confirm with your legal or tax advisor.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="lp-section">
+    <div class="lp-container">
+      <header class="lp-section-head">
+        <span class="lp-eyebrow">FAQ</span>
+        <h2>Questions we hear most.</h2>
+      </header>
+      <div class="lp-faq">
+        <details open>
+          <summary>What is LeaseProp?</summary>
+          <p>LeaseProp is a new, technology-led leasing company based in Noida. It works between landlords and tenants, helping businesses find the right office space and helping property owners connect with genuine corporate tenants.</p>
+        </details>
+        <details>
+          <summary>Who do you work with?</summary>
+          <p>Startups and established businesses looking for office space, and property owners, developers and workspace operators with space to lease.</p>
+        </details>
+        <details>
+          <summary>Which areas do you cover?</summary>
+          <p>We start in Noida and Greater Noida and also work across the wider NCR, including Gurugram and New Delhi.</p>
+        </details>
+        <details>
+          <summary>I am a landlord with vacant space. What happens next?</summary>
+          <p>Send us the location, size, expected rent and availability through the form. We will review the property, discuss positioning and pricing, and introduce suitable tenants.</p>
+        </details>
+        <details>
+          <summary>Can startups lease small spaces or co-working seats?</summary>
+          <p>Yes. We cover everything from co-working seats and managed offices to full office floors, so a small team can start light and expand later.</p>
+        </details>
+        <details>
+          <summary>How long does it take to close a lease?</summary>
+          <p>It depends on the property, the requirement and the negotiation. A clear brief and lease-ready documents on the landlord's side usually speed things up.</p>
+        </details>
+        <details>
+          <summary>Are the rates on the website final?</summary>
+          <p>No. Listing rates are indicative and the lease calculator gives an estimate. Final terms are confirmed on enquiry and set in the lease agreement.</p>
+        </details>
+        <details>
+          <summary>Do you provide legal or tax advice?</summary>
+          <p>No. We coordinate the leasing process, but we recommend that both parties take legal and tax advice on the agreement.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="lp-cta" aria-label="Get started">
+    <div class="lp-container lp-cta-inner">
+      <div>
+        <h2>Looking for office space, or have space to lease?</h2>
+        <p>Tell us a little about it and we will get back to you personally.</p>
+      </div>
+      <div class="lp-cta-actions">
+        <a href="#contact" class="lp-btn lp-btn-primary lp-arrow" data-role="Tenant">I need space</a>
+        <a href="#contact" class="lp-btn lp-btn-outline" data-role="Landlord">I have space to lease</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section id="contact" class="lp-section lp-section-muted">
+  <section id="contact" class="lp-section">
     <div class="lp-container lp-contact">
       <div>
         <span class="lp-eyebrow">Get in touch</span>
-        <h2>Tell LeaseProp what you need</h2>
-        <p>Share your requirement and LeaseProp will get back with curated options.</p>
+        <h2>Tell us what you are looking for</h2>
+        <p>Whether you are a business looking for space or a landlord with space to lease, share a few details and we will get back to you personally.</p>
         <div class="lp-contact-meta">
           <span>✉ <a href="mailto:info@leaseprop.in">info@leaseprop.in</a></span>
           <span>☎ <a href="tel:+919354346573">+91-9354346573</a></span>
+          <span>&#8962; Noida, Uttar Pradesh</span>
           <span class="lp-wa-contact">
             <img src="assets/img/whatsapp-logo.svg" alt="" class="lp-wa-inline" width="22" height="22" />
             <a href="https://wa.me/919354346573?text=I%20am%20interested%20in%20leasing%20a%20commercial%20space%20via%20LeaseProp" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
           </span>
         </div>
       </div>
-      <form class="lp-contact-form" id="requirement-form" action="mailto:info@leaseprop.in" method="post" enctype="text/plain">
+
+      <form class="lp-contact-form" id="requirement-form" action="mailto:info@leaseprop.in" method="post" enctype="text/plain" novalidate>
+        <div class="lp-field">
+          <label for="c-role">I am a</label>
+          <select id="c-role" name="role">
+            <option value="Tenant">Tenant · looking for space</option>
+            <option value="Landlord">Landlord · have space to lease</option>
+            <option value="Other">Other · partner or general enquiry</option>
+          </select>
+        </div>
         <div class="lp-field">
           <label for="c-name">Full name</label>
           <input id="c-name" name="name" type="text" placeholder="Your name" required autocomplete="name" />
@@ -457,10 +999,17 @@
           <input id="c-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email" />
         </div>
         <div class="lp-field">
-          <label for="c-req">Requirement</label>
+          <label for="c-phone">Phone (optional)</label>
+          <input id="c-phone" name="phone" type="tel" placeholder="+91 98XXXXXXXX" autocomplete="tel" />
+        </div>
+        <div class="lp-field">
+          <label for="c-req">Requirement or property details</label>
           <textarea id="c-req" name="requirement" rows="4" placeholder="Location, size, budget, timeline" required></textarea>
         </div>
-        <button type="submit" class="lp-btn lp-btn-dark lp-btn-full">Submit requirement</button>
+        <!-- Spam trap: real users never see or fill this -->
+        <div class="lp-hp" aria-hidden="true"><label>Leave blank <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+        <button type="submit" class="lp-btn lp-btn-dark lp-btn-full" id="submit-btn">Send enquiry</button>
+        <p class="lp-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -474,23 +1023,26 @@
           <span class="lp-logo-mark">L</span>
           <span class="lp-logo-text">LeaseProp</span>
         </a>
-        <p>Lease smarter · Lease faster. Verified commercial spaces across Delhi NCR.</p>
+        <p>A technology-led leasing incubator connecting landlords and tenants in Noida, Greater Noida and the wider NCR.</p>
       </div>
       <div>
-        <h4>Space types</h4>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="#listings">Office</a></li>
-          <li><a href="#listings">Retail</a></li>
-          <li><a href="#listings">Co-working</a></li>
-          <li><a href="#listings">Warehouse</a></li>
+          <li><a href="#about">Why LeaseProp</a></li>
+          <li><a href="#listings">Early listings</a></li>
+          <li><a href="#calculator">Lease calculator</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#founder">Founder</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#owners">For owners</a></li>
+          <li><a href="#owners">For landlords</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/ankur-parashar-27039610" target="_blank" rel="noopener noreferrer">Founder on LinkedIn</a></li>
         </ul>
       </div>
       <div>
@@ -509,27 +1061,319 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+<a class="lp-fab" href="https://wa.me/919354346573?text=I%20am%20interested%20in%20leasing%20a%20commercial%20space%20via%20LeaseProp" target="_blank" rel="noopener noreferrer" aria-label="Chat with LeaseProp on WhatsApp">
+  <img src="assets/img/whatsapp-logo.svg" alt="" width="34" height="34" />
+</a>
 
-  // Mobile menu
-  var burger = document.getElementById('burger');
-  var nav = document.getElementById('primary-nav');
+<script>
+(function () {
+  'use strict';
+
+  /* =====================================================================
+     SETTINGS — edit these two things
+     ===================================================================== */
+
+  // 1) Enquiry form endpoint. Paste a Formspree / Netlify / Getform URL here,
+  //    e.g. "https://formspree.io/f/xxxxxxxx". While empty, the form opens the
+  //    visitor's email app with the message pre-filled instead.
+  var FORM_ENDPOINT = "";
+  var CONTACT_EMAIL = "info@leaseprop.in";
+
+  // 2) LISTINGS — add or edit properties here; cards, filters, tabs and the
+  //    stats above all update automatically.
+  //    type: "Office" | "Retail" | "Co-working" | "Warehouse"
+  //    sqft: area in sq ft (use null if not applicable, e.g. per-seat pricing)
+  //    rate: rent in ₹ / sq ft / month (use null for per-seat pricing)
+  //    priceLabel: text shown on the card; sortPrice: number used for sorting
+  var LISTINGS = [
+    {
+      id: "skyline", name: "Skyline Business Park", type: "Office",
+      area: "Sector 62", city: "Noida", sqft: 25000, rate: 95,
+      detail: "25,000 sq ft · Warm shell",
+      priceLabel: "₹95 / sq ft", sortPrice: 95,
+      img: "assets/img/listing-office-tower.jpg", alt: "Glass façade office tower",
+      chip: "Office · For lease", chipClass: "lp-chip-green"
+    },
+    {
+      id: "highstreet", name: "Central High Street", type: "Retail",
+      area: "Golf Course Road", city: "Gurugram", sqft: null, rate: 220,
+      detail: "Ground + 2 floors · Corner unit",
+      priceLabel: "₹220 / sq ft", sortPrice: 220,
+      img: "assets/img/listing-retail.jpg", alt: "High street retail frontage",
+      chip: "Retail · For lease", chipClass: "lp-chip-amber"
+    },
+    {
+      id: "hubwork", name: "Hubwork Tower", type: "Co-working",
+      area: "Connaught Place", city: "New Delhi", sqft: null, rate: null,
+      detail: "120 desks · Managed",
+      priceLabel: "₹12,500 / seat", sortPrice: 12500,
+      img: "assets/img/listing-cowork.jpg", alt: "Coworking office interior",
+      chip: "Co-working", chipClass: "lp-chip-blue"
+    }
+  ];
+
+  /* ===================================================================== */
+
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  var inr = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+  var num = function (el) { var v = parseFloat(el.value); return isFinite(v) ? v : 0; };
+
+  /* ---------- Footer year + mobile menu ---------- */
+  $('year').textContent = new Date().getFullYear();
+  var burger = $('burger'), nav = $('primary-nav');
   burger.addEventListener('click', function () {
     var open = nav.classList.toggle('is-open');
-    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-expanded', String(open));
   });
   nav.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () { nav.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); });
   });
 
-  // "View details" pre-fills the requirement box
-  document.querySelectorAll('[data-listing]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      var box = document.getElementById('c-req');
-      if (box && !box.value) box.value = 'Interested in: ' + el.dataset.listing + '\n';
+  /* ---------- Space types for the filter tabs ---------- */
+  var types = [], cities = [];
+  LISTINGS.forEach(function (l) {
+    if (types.indexOf(l.type) < 0) types.push(l.type);
+    if (cities.indexOf(l.city) < 0) cities.push(l.city);
+  });
+
+  /* ---------- Listings: render, search, filter, sort ---------- */
+  var state = { q: '', type: 'all', size: 'any', sort: 'default' };
+  var grid = $('listing-grid'), countEl = $('results-count'), tabs = $('type-tabs');
+
+  function sizeMatch(l, size) {
+    if (size === 'any' || l.sqft == null) return true; // per-seat / unspecified sizes always match
+    if (size === 'small') return l.sqft >= 500 && l.sqft < 2000;
+    if (size === 'mid') return l.sqft >= 2000 && l.sqft < 10000;
+    if (size === 'large') return l.sqft >= 10000;
+    return true;
+  }
+
+  function filtered() {
+    var q = state.q.trim().toLowerCase();
+    var out = LISTINGS.filter(function (l) {
+      var hay = (l.name + ' ' + l.area + ' ' + l.city + ' ' + l.type).toLowerCase();
+      return (!q || hay.indexOf(q) > -1) &&
+             (state.type === 'all' || l.type === state.type) &&
+             sizeMatch(l, state.size);
+    });
+    if (state.sort === 'price-asc') out.sort(function (a, b) { return a.sortPrice - b.sortPrice; });
+    if (state.sort === 'price-desc') out.sort(function (a, b) { return b.sortPrice - a.sortPrice; });
+    if (state.sort === 'size-desc') out.sort(function (a, b) { return (b.sqft || 0) - (a.sqft || 0); });
+    return out;
+  }
+
+  function cardHTML(l) {
+    var calcBtn = l.rate != null
+      ? '<button type="button" class="lp-link-btn" data-calc="' + esc(l.id) + '">Estimate cost</button>' : '';
+    return '<article class="lp-card">' +
+      '<div class="lp-card-img"><img src="' + esc(l.img) + '" alt="' + esc(l.alt) + '" width="600" height="400" loading="lazy" />' +
+      '<span class="lp-chip ' + esc(l.chipClass) + '">' + esc(l.chip) + '</span></div>' +
+      '<div class="lp-card-body"><h3>' + esc(l.name) + '</h3>' +
+      '<p class="lp-card-location">' + esc(l.area) + ' · ' + esc(l.city) + '</p>' +
+      '<div class="lp-card-meta"><span>' + esc(l.detail) + '</span></div>' +
+      '<div class="lp-card-footer"><span class="lp-price">' + esc(l.priceLabel) + '</span>' +
+      '<div class="lp-card-actions">' + calcBtn +
+      '<button type="button" class="lp-link-btn" data-enquire="' + esc(l.id) + '">Enquire</button></div></div></div></article>';
+  }
+
+  function render() {
+    var list = filtered();
+    if (!list.length) {
+      grid.innerHTML = '<div class="lp-empty"><h3>No exact match yet</h3>' +
+        '<p>We may still have something that fits, or can source it for you. Tell us what you need.</p>' +
+        '<button type="button" class="lp-btn lp-btn-dark" id="empty-enquire">Send my requirement</button>' +
+        '<button type="button" class="lp-btn lp-btn-ghost" id="empty-reset">Reset filters</button></div>';
+      countEl.innerHTML = '<strong>0</strong> properties match your filters';
+      return;
+    }
+    grid.innerHTML = list.map(cardHTML).join('');
+    countEl.innerHTML = 'Showing <strong>' + list.length + '</strong> of ' + LISTINGS.length + ' properties';
+  }
+
+  function renderTabs() {
+    var all = ['all'].concat(types);
+    tabs.innerHTML = all.map(function (t) {
+      return '<button type="button" class="lp-tab" data-type="' + esc(t) + '" aria-pressed="' + (state.type === t) + '">' +
+             (t === 'all' ? 'All' : esc(t)) + '</button>';
+    }).join('');
+  }
+
+  function syncControls() {
+    $('s-location').value = state.q;
+    $('s-type').value = state.type;
+    $('s-size').value = state.size;
+    $('sort-by').value = state.sort;
+    renderTabs(); render();
+  }
+
+  $('search-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    state.q = $('s-location').value;
+    state.type = $('s-type').value;
+    state.size = $('s-size').value;
+    syncControls();
+    $('listings').scrollIntoView({ behavior: 'smooth' });
+  });
+  $('s-type').addEventListener('change', function () { state.type = this.value; syncControls(); });
+  $('sort-by').addEventListener('change', function () { state.sort = this.value; render(); });
+  $('reset-filters').addEventListener('click', function () {
+    state = { q: '', type: 'all', size: 'any', sort: 'default' }; syncControls();
+  });
+  tabs.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-type]'); if (!b) return;
+    state.type = b.getAttribute('data-type'); syncControls();
+  });
+
+  function findListing(id) { return LISTINGS.filter(function (l) { return l.id === id; })[0]; }
+
+  function prefillRequirement(text) {
+    var box = $('c-req');
+    box.value = text;
+    setRole('Tenant');
+    $('contact').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(function () { $('c-name').focus({ preventScroll: true }); }, 500);
+  }
+
+  function updateRolePlaceholder() {
+    var role = $('c-role').value;
+    $('c-req').placeholder = role === 'Landlord' ? 'Property location, size, expected rent, availability'
+      : role === 'Tenant' ? 'Location, size, budget, timeline' : 'How can we help?';
+  }
+  function setRole(role) { $('c-role').value = role; updateRolePlaceholder(); }
+  $('c-role').addEventListener('change', updateRolePlaceholder);
+  document.querySelectorAll('[data-role]').forEach(function (el) {
+    el.addEventListener('click', function () { setRole(el.getAttribute('data-role')); });
+  });
+
+  grid.addEventListener('click', function (e) {
+    var enq = e.target.closest('[data-enquire]');
+    var calc = e.target.closest('[data-calc]');
+    var emptyEnq = e.target.closest('#empty-enquire');
+    var emptyReset = e.target.closest('#empty-reset');
+    if (enq) {
+      var l = findListing(enq.getAttribute('data-enquire'));
+      if (l) prefillRequirement('Interested in: ' + l.name + ' (' + l.area + ', ' + l.city + ') — ' + l.priceLabel + '\n');
+    } else if (calc) {
+      var c = findListing(calc.getAttribute('data-calc'));
+      if (c) {
+        if (c.sqft) $('k-area').value = c.sqft;
+        $('k-rate').value = c.rate;
+        recalc();
+        $('calculator').scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (emptyEnq) {
+      var parts = [];
+      if (state.q) parts.push('location: ' + state.q);
+      if (state.type !== 'all') parts.push('type: ' + state.type);
+      if (state.size !== 'any') parts.push('size band: ' + $('s-size').selectedOptions[0].text + ' sq ft');
+      prefillRequirement('Looking for a space — ' + (parts.join(', ') || 'details below') + '\n');
+    } else if (emptyReset) {
+      state = { q: '', type: 'all', size: 'any', sort: 'default' }; syncControls();
+    }
+  });
+
+  /* ---------- Lease cost calculator ---------- */
+  var kArea = $('k-area'), kRate = $('k-rate'), kCam = $('k-cam'), kYears = $('k-years'),
+      kEsc = $('k-esc'), kDep = $('k-dep'), kGst = $('k-gst');
+  var lastCalc = null;
+
+  function recalc() {
+    var area = Math.max(0, num(kArea)), rate = Math.max(0, num(kRate)), cam = Math.max(0, num(kCam));
+    var years = Math.min(30, Math.max(1, Math.round(num(kYears)))), esc_ = Math.max(0, num(kEsc)) / 100;
+    var depMonths = Math.max(0, num(kDep)), gst = kGst.checked ? 1.18 : 1;
+    var rows = '', total = 0;
+
+    for (var y = 0; y < years; y++) {
+      var rentM = area * rate * Math.pow(1 + esc_, y);
+      var payM = (rentM + area * cam) * gst;
+      var annual = payM * 12;
+      total += annual;
+      rows += '<tr><td>' + (y + 1) + '</td><td>' + inr.format(rentM) + '</td><td>' + inr.format(annual) + '</td></tr>';
+    }
+    var firstMonth = (area * rate + area * cam) * gst;
+    var deposit = area * rate * depMonths;
+    var avg = (area > 0) ? total / (years * 12) / area : 0;
+
+    $('o-monthly').textContent = inr.format(firstMonth);
+    $('o-deposit').textContent = inr.format(deposit);
+    $('o-total').textContent = inr.format(total);
+    $('o-avg').textContent = '₹' + avg.toFixed(1);
+    $('o-rows').innerHTML = rows;
+    lastCalc = { area: area, rate: rate, years: years, esc: esc_ * 100, firstMonth: firstMonth, deposit: deposit, total: total, gst: kGst.checked };
+  }
+  [kArea, kRate, kCam, kYears, kEsc, kDep, kGst].forEach(function (el) {
+    el.addEventListener('input', recalc); el.addEventListener('change', recalc);
+  });
+  $('calc-enquire').addEventListener('click', function () {
+    if (!lastCalc) recalc();
+    var c = lastCalc;
+    prefillRequirement('Lease estimate: ' + c.area.toLocaleString('en-IN') + ' sq ft at ₹' + c.rate + '/sq ft/month, ' +
+      c.years + '-year term, ' + c.esc + '% yearly escalation' + (c.gst ? ', incl. 18% GST' : '') +
+      '. Est. first-year monthly: ' + inr.format(c.firstMonth) + '; total: ' + inr.format(c.total) + '.\nPreferred location/timeline: ');
+  });
+  recalc();
+
+  /* ---------- Owner CTA pre-fill ---------- */
+  $('owner-cta').addEventListener('click', function () {
+    var box = $('c-req');
+    if (!box.value) box.value = 'I am a landlord and would like to list my property.\nLocation, size, expected rent: ';
+  });
+
+  /* ---------- Enquiry form ---------- */
+  var form = $('requirement-form'), statusEl = $('form-status'), btn = $('submit-btn');
+
+  function setStatus(kind, msg) {
+    statusEl.className = 'lp-status ' + (kind === 'ok' ? 'is-ok' : 'is-err');
+    statusEl.textContent = msg;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    statusEl.className = 'lp-status';
+    var data = {
+      role: $('c-role').value,
+      name: $('c-name').value.trim(),
+      email: $('c-email').value.trim(),
+      phone: $('c-phone').value.trim(),
+      requirement: $('c-req').value.trim()
+    };
+    if (form.elements['website'].value) return; // bot caught by the honeypot
+
+    if (!data.name || !data.requirement) return setStatus('err', 'Please enter your name and requirement.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return setStatus('err', 'Please enter a valid email address.');
+
+    if (!FORM_ENDPOINT) {
+      // Fallback until an endpoint is configured: open the visitor's mail app, pre-filled.
+      var body = 'I am a: ' + data.role + '\nName: ' + data.name + '\nEmail: ' + data.email + '\nPhone: ' + (data.phone || '-') + '\n\n' + data.requirement;
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('LeaseProp enquiry from ' + data.name) +
+        '&body=' + encodeURIComponent(body);
+      return setStatus('ok', 'Your email app should open with the message ready to send. If it does not, write to ' + CONTACT_EMAIL + ' or use WhatsApp.');
+    }
+
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      form.reset();
+      setStatus('ok', 'Thank you. We have your requirement and will get back to you shortly.');
+    }).catch(function () {
+      setStatus('err', 'Could not send right now. Please email ' + CONTACT_EMAIL + ' or message us on WhatsApp.');
+    }).then(function () {
+      btn.disabled = false; btn.textContent = 'Send enquiry';
     });
   });
+
+  /* ---------- Init ---------- */
+  syncControls();
+})();
 </script>
 
 </body>
