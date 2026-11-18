@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe
-    src="https://www.googletagmanager.com/ns.html?id=GTM-W7JV3DMN"
-    height="0"
-    width="0"
-    style="display:none;visibility:hidden">
-  </iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LeaseProp | Leasing Incubator for Landlords &amp; Tenants</title>
@@ -33,9 +21,8 @@
     "email": "info@leaseprop.in",
     "founder": {
       "@type": "Person",
-      "name": "Ankur Parashar",
-      "jobTitle": "Founder & Director",
-      "sameAs": "https://www.linkedin.com/in/ankur-parashar-27039610"
+      "name": "Ankur (AP)",
+      "jobTitle": "Founder & Director"
     }
   }
   </script>
@@ -180,6 +167,12 @@
     .lp-card-actions { display: flex; gap: 14px; align-items: center; }
     .lp-link-btn { font: 700 13px var(--sans); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--green); border: 0; border-bottom: 2px solid var(--mint); padding: 0 0 2px; background: none; cursor: pointer; }
     .lp-link-btn:hover { color: var(--green-dark); }
+    .lp-card-meta { margin-bottom: 14px; }
+    .lp-feat { list-style: none; margin: 0 0 22px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+    .lp-feat li { font-size: 12.5px; line-height: 1.3; padding: 5px 10px; background: var(--bg-alt); border: 1px solid var(--line); color: var(--ink); }
+    .lp-pricebox { display: flex; flex-direction: column; }
+    .lp-price-sm { font-size: 19px; }
+    .lp-price-note { color: var(--muted); font-size: 12.5px; }
     .lp-empty { grid-column: 1 / -1; padding: 48px 28px; text-align: center; background: var(--bg-alt); border: 1px dashed #b7c4c2; }
     .lp-empty h3 { font-size: 26px; margin-bottom: 8px; }
     .lp-empty p { color: var(--muted); margin-bottom: 20px; }
@@ -250,8 +243,6 @@
     .lp-chipset { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0; }
     .lp-chipset span { border: 1px solid rgba(255,255,255,.25); padding: 6px 12px; font-size: 12.5px; border-radius: 999px; color: #e8efee; }
     .lp-edu { color: #b9c8c6; font-size: 14px; margin-bottom: 22px; }
-    .lp-fcard .lp-link-btn { color: var(--mint); }
-    .lp-fcard .lp-link-btn:hover { color: #fff; }
     .lp-quote { margin: 0 0 28px; padding-left: 24px; border-left: 3px solid var(--mint); font: 400 clamp(22px, 2.6vw, 30px)/1.3 var(--serif); color: #fff; }
     .lp-quote cite { display: block; margin-top: 12px; font: 500 14px var(--sans); color: var(--mint); font-style: normal; letter-spacing: .06em; text-transform: uppercase; }
     .lp-founder-copy > p { color: #c9d6d5; font-size: 17px; margin-bottom: 16px; }
@@ -381,17 +372,6 @@
 </head>
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe
-    src="https://www.googletagmanager.com/ns.html?id=GTM-W7JV3DMN"
-    height="0"
-    width="0"
-    style="display:none;visibility:hidden">
-  </iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
 <a href="#main" class="lp-skip">Skip to content</a>
 
 <div class="lp-topbar">
@@ -597,7 +577,7 @@
       <div class="lp-founder-grid">
         <aside class="lp-fcard">
           <div class="lp-avatar" aria-hidden="true">AP</div>
-          <h3>Ankur Parashar</h3>
+          <h3>Ankur (AP)</h3>
           <p class="lp-role">Founder &amp; Director, LeaseProp</p>
           <p class="lp-loc">Noida, Uttar Pradesh</p>
           <div class="lp-chipset">
@@ -609,13 +589,12 @@
             <span>Sun Certified Web Component Developer</span>
           </div>
           <p class="lp-edu">Bachelor's degree, Computer Science<br />ABES Engineering College</p>
-          <a class="lp-link-btn" href="https://www.linkedin.com/in/ankur-parashar-27039610" target="_blank" rel="noopener noreferrer">View LinkedIn profile</a>
         </aside>
 
         <div class="lp-founder-copy">
           <blockquote class="lp-quote">
             &ldquo;I believe commercial real estate should be more transparent, accessible and efficient.&rdquo;
-            <cite>Ankur Parashar</cite>
+            <cite>Ankur (AP)</cite>
           </blockquote>
           <p>
             Ankur is a technology professional turned entrepreneur. Across more than 18 years in the IT industry he has built
@@ -1062,7 +1041,6 @@
         <ul>
           <li><a href="#owners">For landlords</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="https://www.linkedin.com/in/ankur-parashar-27039610" target="_blank" rel="noopener noreferrer">Founder on LinkedIn</a></li>
         </ul>
       </div>
       <div>
@@ -1098,36 +1076,64 @@
   var FORM_ENDPOINT = "";
   var CONTACT_EMAIL = "info@leaseprop.in";
 
-  // 2) LISTINGS — add or edit properties here; cards, filters, tabs and the
-  //    stats above all update automatically.
-  //    type: "Office" | "Retail" | "Co-working" | "Warehouse"
-  //    sqft: area in sq ft (use null if not applicable, e.g. per-seat pricing)
-  //    rate: rent in ₹ / sq ft / month (use null for per-seat pricing)
-  //    priceLabel: text shown on the card; sortPrice: number used for sorting
+  // 2) LISTINGS — add or edit properties here; cards, filter tabs and sorting update automatically.
+  //    type: "Office" | "Co-working" (a new type automatically gets its own filter tab)
+  //    sqft: area in sq ft (or null)
+  //    rate: rent in ₹ / sq ft / month. When set, the card gets an "Estimate cost" button that
+  //          opens the lease calculator with these numbers. Use null if not priced that way.
+  //    features: short tags shown on the card
+  //    priceLabel: text shown on the card; priceNote: optional small line under it
+  //    sortPrice: number used when sorting by price (null = no fixed price, sorted last)
   var LISTINGS = [
     {
-      id: "skyline", name: "Skyline Business Park", type: "Office",
-      area: "Sector 62", city: "Noida", sqft: 25000, rate: 95,
-      detail: "25,000 sq ft · Warm shell",
-      priceLabel: "₹95 / sq ft", sortPrice: 95,
-      img: "assets/img/listing-office-tower.jpg", alt: "Glass façade office tower",
-      chip: "Office · For lease", chipClass: "lp-chip-green"
+      id: "office-s3-5000", name: "Ready-to-Move Office Floor", type: "Office",
+      area: "Sector 3", city: "Noida", sqft: 5000, rate: 75,
+      detail: "5,000 sq ft · Ready to move",
+      features: ["70 seats", "12-seat conference room", "5 meeting rooms", "Reception", "2 director cabins", "Pantry"],
+      priceLabel: "₹75 / sq ft", sortPrice: 75,
+      img: "assets/img/listing-office-s3-5000.jpg",
+      alt: "Illustrated floor plan of a 5,000 sq ft ready-to-move office with 70 seats, conference room, meeting rooms, reception, director cabins and pantry",
+      chip: "Office · Ready to move", chipClass: "lp-chip-green"
     },
     {
-      id: "highstreet", name: "Central High Street", type: "Retail",
-      area: "Golf Course Road", city: "Gurugram", sqft: null, rate: 220,
-      detail: "Ground + 2 floors · Corner unit",
-      priceLabel: "₹220 / sq ft", sortPrice: 220,
-      img: "assets/img/listing-retail.jpg", alt: "High street retail frontage",
-      chip: "Retail · For lease", chipClass: "lp-chip-amber"
+      id: "office-s3-2000", name: "Compact Ready-to-Move Office", type: "Office",
+      area: "Sector 3", city: "Noida", sqft: 2000, rate: 80,
+      detail: "2,000 sq ft · Ready to move",
+      features: ["20 seats", "2 director cabins", "Pantry"],
+      priceLabel: "₹80 / sq ft", sortPrice: 80,
+      img: "assets/img/listing-office-s3-2000.jpg",
+      alt: "Illustrated floor plan of a 2,000 sq ft ready-to-move office with 20 seats, two director cabins and a pantry",
+      chip: "Office · Ready to move", chipClass: "lp-chip-green"
     },
     {
-      id: "hubwork", name: "Hubwork Tower", type: "Co-working",
-      area: "Connaught Place", city: "New Delhi", sqft: null, rate: null,
-      detail: "120 desks · Managed",
-      priceLabel: "₹12,500 / seat", sortPrice: 12500,
-      img: "assets/img/listing-cowork.jpg", alt: "Coworking office interior",
+      id: "office-s2-bareshell", name: "Bare-Shell Office Space", type: "Office",
+      area: "Sector 2", city: "Noida", sqft: 5000, rate: 100,
+      detail: "5,000 sq ft · Bare shell",
+      features: ["Bare shell", "Can be built out for up to 100 seats"],
+      priceLabel: "₹5 lakh / month", priceNote: "≈ ₹100 / sq ft", sortPrice: 100,
+      img: "assets/img/listing-office-s2-bareshell.jpg",
+      alt: "Illustrated layout of a 5,000 sq ft bare-shell office that can be built out for up to 100 seats",
+      chip: "Office · Bare shell", chipClass: "lp-chip-amber"
+    },
+    {
+      id: "cowork-s2-open", name: "Open-Seat Co-working Space", type: "Co-working",
+      area: "Sector 2", city: "Noida", sqft: 5000, rate: null,
+      detail: "5,000 sq ft · Open seats",
+      features: ["Open seats", "Recreation area", "Pantry"],
+      priceLabel: "₹5,000 – 7,500 / seat", sortPrice: 5000,
+      img: "assets/img/listing-cowork-s2-open.jpg",
+      alt: "Illustrated floor plan of a 5,000 sq ft co-working space with open seats, a recreation area and a pantry",
       chip: "Co-working", chipClass: "lp-chip-blue"
+    },
+    {
+      id: "cowork-s3-bareshell", name: "Build-to-Suit Co-working Space", type: "Co-working",
+      area: "Sector 3", city: "Noida", sqft: 6000, rate: null,
+      detail: "6,000 sq ft · Bare shell",
+      features: ["Built to client needs", "Up to 200 seats", "Recreation area", "Pantry"],
+      priceLabel: "Discuss in meeting", sortPrice: null,
+      img: "assets/img/listing-cowork-s3-bareshell.jpg",
+      alt: "Illustrated layout of a 6,000 sq ft bare-shell co-working space that can host up to 200 seats with a recreation area and pantry",
+      chip: "Co-working · Bare shell", chipClass: "lp-chip-blue"
     }
   ];
 
@@ -1180,8 +1186,20 @@
              (state.type === 'all' || l.type === state.type) &&
              sizeMatch(l, state.size);
     });
-    if (state.sort === 'price-asc') out.sort(function (a, b) { return a.sortPrice - b.sortPrice; });
-    if (state.sort === 'price-desc') out.sort(function (a, b) { return b.sortPrice - a.sortPrice; });
+    // Prices use different units per type (₹ per sq ft vs ₹ per seat), so price sorting keeps
+    // each type together; listings without a fixed price go last.
+    var typeRank = function (l) { return types.indexOf(l.type); };
+    var priceSort = function (dir) {
+      return function (a, b) {
+        if (typeRank(a) !== typeRank(b)) return typeRank(a) - typeRank(b);
+        if (a.sortPrice == null && b.sortPrice == null) return 0;
+        if (a.sortPrice == null) return 1;
+        if (b.sortPrice == null) return -1;
+        return dir * (a.sortPrice - b.sortPrice);
+      };
+    };
+    if (state.sort === 'price-asc') out.sort(priceSort(1));
+    if (state.sort === 'price-desc') out.sort(priceSort(-1));
     if (state.sort === 'size-desc') out.sort(function (a, b) { return (b.sqft || 0) - (a.sqft || 0); });
     return out;
   }
@@ -1189,13 +1207,17 @@
   function cardHTML(l) {
     var calcBtn = l.rate != null
       ? '<button type="button" class="lp-link-btn" data-calc="' + esc(l.id) + '">Estimate cost</button>' : '';
+    var feats = (l.features && l.features.length)
+      ? '<ul class="lp-feat">' + l.features.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul>' : '';
+    var priceCls = l.sortPrice == null ? 'lp-price lp-price-sm' : 'lp-price';
+    var note = l.priceNote ? '<small class="lp-price-note">' + esc(l.priceNote) + '</small>' : '';
     return '<article class="lp-card">' +
       '<div class="lp-card-img"><img src="' + esc(l.img) + '" alt="' + esc(l.alt) + '" width="600" height="400" loading="lazy" />' +
       '<span class="lp-chip ' + esc(l.chipClass) + '">' + esc(l.chip) + '</span></div>' +
       '<div class="lp-card-body"><h3>' + esc(l.name) + '</h3>' +
       '<p class="lp-card-location">' + esc(l.area) + ' · ' + esc(l.city) + '</p>' +
-      '<div class="lp-card-meta"><span>' + esc(l.detail) + '</span></div>' +
-      '<div class="lp-card-footer"><span class="lp-price">' + esc(l.priceLabel) + '</span>' +
+      '<div class="lp-card-meta"><span>' + esc(l.detail) + '</span></div>' + feats +
+      '<div class="lp-card-footer"><div class="lp-pricebox"><span class="' + priceCls + '">' + esc(l.priceLabel) + '</span>' + note + '</div>' +
       '<div class="lp-card-actions">' + calcBtn +
       '<button type="button" class="lp-link-btn" data-enquire="' + esc(l.id) + '">Enquire</button></div></div></div></article>';
   }
