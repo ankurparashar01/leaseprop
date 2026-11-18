@@ -16,7 +16,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="LeaseProp.IN | Leasing Incubator for Landlords &amp; Tenants" />
   <meta property="og:description" content="A technology-led company between landlords and tenants, facilitating commercial office leases in Noida and the wider NCR." />
-  <meta property="og:image" content="assets/img/hero-building.jpg" />
+  <meta property="og:image" content="assets/img/logo.jpg" />
+  <link rel="icon" type="image/png" href="assets/img/logo-tile.png" />
 
   <script type="application/ld+json">
   {
@@ -88,9 +89,11 @@
     .lp-topbar a:hover { opacity: 1; color: var(--mint); }
     .lp-header { position: sticky; top: 0; z-index: 50; background: var(--green-dark); border-bottom: 1px solid rgba(255,255,255,.08); }
     .lp-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 76px; }
-    .lp-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
-    .lp-logo-mark { width: 38px; height: 38px; display: grid; place-items: center; background: var(--mint); color: var(--green-dark); font: 700 22px var(--serif); border-radius: var(--radius); }
-    .lp-logo-text { font: 600 24px var(--serif); letter-spacing: .02em; }
+    .lp-logo { display: flex; align-items: center; text-decoration: none; transition: opacity .2s; }
+    .lp-logo:hover { opacity: .9; }
+    .lp-logo img { height: 48px; width: auto; max-width: 210px; display: block; object-fit: contain; }
+    .lp-logo-mark { display: none; }
+    .lp-logo-text { display: none; }
     .lp-nav-links { display: flex; gap: 22px; }
     .lp-nav-links a { color: #fff; text-decoration: none; font-size: 14.5px; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
     .lp-nav-links a:hover { border-color: var(--mint); }
@@ -401,8 +404,7 @@
 <header class="lp-header">
   <div class="lp-container lp-nav">
     <a href="#" class="lp-logo" aria-label="LeaseProp.IN home">
-      <span class="lp-logo-mark">L</span>
-      <span class="lp-logo-text">LeaseProp.IN</span>
+      <img src="assets/img/logo.png" alt="LeaseProp.IN" width="190" height="48" />
     </a>
     <button class="lp-burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
@@ -989,7 +991,7 @@
         <p>Whether you are a business looking for space or a landlord with space to lease, share a few details and we will get back to you personally.</p>
         <div class="lp-contact-meta">
           <span>✉ <a href="mailto:info@leaseprop.in">info@leaseprop.in</a></span>
-          <span>&#8962; Noida, Uttar Pradesh</span>
+          <span>&#8962; D-Block, Sector-3, Noida, UP 201301</span>
           <span class="lp-wa-contact">
             <img src="assets/img/whatsapp-logo.svg" alt="" class="lp-wa-inline" width="22" height="22" />
             <a href="#contact" data-wa>Chat on WhatsApp</a>
@@ -1036,8 +1038,7 @@
     <div class="lp-footer-cols">
       <div class="lp-footer-brand">
         <a href="#" class="lp-logo" aria-label="LeaseProp.IN home">
-          <span class="lp-logo-mark">L</span>
-          <span class="lp-logo-text">LeaseProp.IN</span>
+          <img src="assets/img/logo.png" alt="LeaseProp.IN" width="190" height="48" />
         </a>
         <p>A technology-led leasing incubator connecting landlords and tenants in Noida, Greater Noida and the wider NCR.</p>
       </div>
@@ -1108,8 +1109,8 @@
       detail: "5,000 sq ft · Ready to move",
       features: ["70 seats", "12-seat conference room", "5 meeting rooms", "Reception", "2 director cabins", "Pantry"],
       priceLabel: "₹75 / sq ft", sortPrice: 75,
-      img: "assets/img/listing-office-s3-5000.jpg",
-      alt: "Illustrated floor plan of a 5,000 sq ft ready-to-move office with 70 seats, conference room, meeting rooms, reception, director cabins and pantry",
+      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop",
+      alt: "Modern open-plan office interior with workstations, conference rooms and reception — 5,000 sq ft ready-to-move space in Sector 3 Noida",
       chip: "Office · Ready to move", chipClass: "lp-chip-green"
     },
     {
@@ -1118,8 +1119,8 @@
       detail: "2,000 sq ft · Ready to move",
       features: ["20 seats", "2 director cabins", "Pantry"],
       priceLabel: "₹80 / sq ft", sortPrice: 80,
-      img: "assets/img/listing-office-s3-2000.jpg",
-      alt: "Illustrated floor plan of a 2,000 sq ft ready-to-move office with 20 seats, two director cabins and a pantry",
+      img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop",
+      alt: "Compact modern office interior with 20 workstations, director cabins and pantry — 2,000 sq ft ready-to-move space in Sector 3 Noida",
       chip: "Office · Ready to move", chipClass: "lp-chip-green"
     },
     {
@@ -1128,8 +1129,8 @@
       detail: "5,000 sq ft · Bare shell",
       features: ["Bare shell", "Can be built out for up to 100 seats"],
       priceLabel: "₹5 lakh / month", priceNote: "≈ ₹100 / sq ft", sortPrice: 100,
-      img: "assets/img/listing-office-s2-bareshell.jpg",
-      alt: "Illustrated layout of a 5,000 sq ft bare-shell office that can be built out for up to 100 seats",
+      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop",
+      alt: "Bare-shell commercial office floor with exposed ceilings and open floor plan — 5,000 sq ft shell space in Sector 2 Noida for custom fit-out",
       chip: "Office · Bare shell", chipClass: "lp-chip-amber"
     },
     {
@@ -1138,8 +1139,8 @@
       detail: "5,000 sq ft · Open seats",
       features: ["Open seats", "Recreation area", "Pantry"],
       priceLabel: "₹5,000 – 7,500 / seat", sortPrice: 5000,
-      img: "assets/img/listing-cowork-s2-open.jpg",
-      alt: "Illustrated floor plan of a 5,000 sq ft co-working space with open seats, a recreation area and a pantry",
+      img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&auto=format&fit=crop",
+      alt: "Vibrant co-working space with open hot-desks, recreation area and pantry — 5,000 sq ft shared workspace in Sector 2 Noida",
       chip: "Co-working", chipClass: "lp-chip-blue"
     },
     {
@@ -1148,8 +1149,8 @@
       detail: "6,000 sq ft · Bare shell",
       features: ["Built to client needs", "Up to 200 seats", "Recreation area", "Pantry"],
       priceLabel: "Discuss in meeting", sortPrice: null,
-      img: "assets/img/listing-cowork-s3-bareshell.jpg",
-      alt: "Illustrated layout of a 6,000 sq ft bare-shell co-working space that can host up to 200 seats with a recreation area and pantry",
+      img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80&auto=format&fit=crop",
+      alt: "Build-to-suit co-working space with bare shell and high ceilings — 6,000 sq ft customisable workspace in Sector 3 Noida for up to 200 seats",
       chip: "Co-working · Bare shell", chipClass: "lp-chip-blue"
     }
   ];
