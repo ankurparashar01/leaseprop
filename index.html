@@ -1502,7 +1502,7 @@
     }
     var leadParams = { form_id: 'enquiry', lead_role: data.role, lead_source: leadSource };
 
-    if (!FORM_ENDPOINT) {
+    if (!FORM_ENDPOINT && !window.lpSaveLead) {
       // Fallback until an endpoint is configured: open the visitor's mail app, pre-filled.
       var body = 'I am a: ' + data.role + '\nName: ' + data.name + '\nEmail: ' + data.email + '\nPhone: ' + (data.phone || '-') + '\n\n' + data.requirement;
       track('enquiry_mailto_opened', leadParams);
@@ -1522,15 +1522,25 @@
     btn.disabled = true; btn.textContent = 'Sending…';
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
-    fetch(FORM_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload),
-      signal: ctrl ? ctrl.signal : undefined
-    }).then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json().catch(function () { return {}; });
-    }).then(function (j) {
+    var job;
+    if (window.lpSaveLead) {
+      // Firebase (Firestore) is loaded: save the lead there.
+      job = Promise.race([
+        window.lpSaveLead(payload),
+        new Promise(function (_, reject) { setTimeout(function () { reject({ name: 'AbortError' }); }, 15000); })
+      ]).then(function () { return {}; });
+    } else {
+      job = fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json().catch(function () { return {}; });
+      });
+    }
+    job.then(function (j) {
       if (j && j.success === false) throw new Error('rejected');
       track('generate_lead', leadParams);
       form.reset(); setRole('Tenant'); leadSource = 'contact_form'; started = false;
@@ -1572,6 +1582,32 @@
   /* ---------- Init ---------- */
   syncControls();
 })();
+</script>
+
+
+<!-- Firebase: enquiries are saved to Firestore (collection "leads"). If this fails to load, the form falls back to the email app. -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+  // These web config values are public by design. Access is controlled by Firestore security rules.
+  const firebaseConfig = {
+    apiKey: "AIzaSyB1AnhWxbMCOQYh_a0Uq49DGVgGi3349F0",
+    authDomain: "leaseprop-9cadc.firebaseapp.com",
+    projectId: "leaseprop-9cadc",
+    storageBucket: "leaseprop-9cadc.firebasestorage.app",
+    messagingSenderId: "334169726526",
+    appId: "1:334169726526:web:25f3cb8bbbac148d3abb6f"
+  };
+  const db = getFirestore(initializeApp(firebaseConfig));
+
+  window.lpSaveLead = function (p) {
+    return addDoc(collection(db, "leads"), {
+      role: p.role, name: p.name, email: p.email, phone: p.phone || "",
+      requirement: p.requirement, source: p.source || "", page: p.page || "",
+      status: "new", createdAt: serverTimestamp()
+    });
+  };
 </script>
 
 </body>
