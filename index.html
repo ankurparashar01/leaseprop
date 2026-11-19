@@ -16,32 +16,35 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="LeaseProp.IN | Leasing Incubator for Landlords &amp; Tenants" />
   <meta property="og:description" content="A technology-led company between landlords and tenants, facilitating commercial office leases in Noida and the wider NCR." />
-  <meta property="og:image" content="assets/img/logo.jpg" />
+  <meta property="og:url" content="https://www.leaseprop.in/" />
+  <meta property="og:site_name" content="LeaseProp.IN" />
+  <meta property="og:image" content="https://www.leaseprop.in/assets/img/logo.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="LeaseProp.IN | Leasing Incubator for Landlords &amp; Tenants" />
+  <meta name="twitter:image" content="https://www.leaseprop.in/assets/img/logo.jpg" />
   <link rel="icon" type="image/png" href="assets/img/logo-tile.png" />
   <!-- XML sitemap: keep sitemap.xml in the website root alongside this HTML file. -->
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.leaseprop.in/sitemap.xml" />
 
-  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "LeaseProp",
-  "url": "https://www.leaseprop.in/",
-  "description": "Commercial real estate leasing and office space solutions in Noida and Greater Noida.",
-  "email": "hello@leaseprop.in"
-}
-</script>
-
-  
+  <link rel="canonical" href="https://www.leaseprop.in/" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "LeaseProp.IN",
-    "url": "https://www.leaseprop.in",
+    "url": "https://www.leaseprop.in/",
+    "logo": "https://www.leaseprop.in/assets/img/logo.png",
     "description": "A technology-led leasing incubator in Noida and the wider NCR, working between landlords and tenants on commercial office leasing and managed workspaces.",
     "email": "info@leaseprop.in",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "D-Block, Sector-3",
+      "addressLocality": "Noida",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201301",
+      "addressCountry": "IN"
+    },
+    "areaServed": ["Noida", "Greater Noida", "Delhi NCR"],
     "founder": {
       "@type": "Person",
       "name": "Ankur (AP)",
@@ -345,6 +348,7 @@
     .lp-contact-form .lp-field label { color: var(--green-dark); }
     .lp-contact-form textarea { resize: vertical; }
     .lp-hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+    .lp-fine { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
     .lp-status { font-size: 15px; padding: 12px 14px; display: none; }
     .lp-status.is-ok { display: block; background: var(--mint-soft); color: var(--green-dark); border-left: 4px solid var(--green); }
     .lp-status.is-err { display: block; background: #fdeaea; color: #7a1f1f; border-left: 4px solid #c0392b; }
@@ -391,6 +395,18 @@
       .lp-contact-form, .lp-calc-form, .lp-calc-out, .lp-panel, .lp-fcard { padding: 24px; }
       .lp-cards { grid-template-columns: 1fr; }
       .lp-cta { padding: 48px 0; }
+    }
+    /* Touch devices: comfortable tap targets, and 16px form text so iPhones do not zoom in on focus */
+    @media (pointer: coarse) {
+      .lp-tab { min-height: 44px; }
+      .lp-link-btn { min-height: 44px; padding: 12px 2px 8px; display: inline-flex; align-items: center; }
+      .lp-card-actions { gap: 18px; }
+      .lp-contact-meta a, .lp-footer li a { display: inline-block; padding: 10px 0; }
+      .lp-contact-meta .lp-wa-contact { min-height: 44px; }
+      input:not([type="checkbox"]), select, textarea { font-size: 16px; min-height: 44px; }
+      #k-gst { width: 22px; height: 22px; }
+      .lp-sort select { font-size: 16px; }
+      .lp-btn-sm { min-height: 44px; }
     }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
   </style>
@@ -726,7 +742,7 @@
         <h2>Which kind of workspace fits you?</h2>
         <p>A quick comparison of the most common office formats. These are typical characteristics only; every property and operator is different.</p>
       </header>
-      <div class="lp-tbl-wrap">
+      <div class="lp-tbl-wrap" tabindex="0" role="region" aria-label="Lease formats comparison (scrolls sideways on small screens)">
         <table class="lp-tbl">
           <thead>
             <tr><th>Format</th><th>Best for</th><th>What you get</th><th>Commitment</th><th>Cost profile</th></tr>
@@ -1042,6 +1058,7 @@
         <!-- Spam trap: real users never see or fill this -->
         <div class="lp-hp" aria-hidden="true"><label>Leave blank <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
         <button type="submit" class="lp-btn lp-btn-dark lp-btn-full" id="submit-btn">Send enquiry</button>
+        <p class="lp-fine">We use your details only to respond to your enquiry.</p>
         <p class="lp-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -1108,6 +1125,8 @@
   //    visitor's email app with the message pre-filled instead.
   var FORM_ENDPOINT = "";
   var CONTACT_EMAIL = "info@leaseprop.in";
+  // Only if you use Web3Forms: paste its access key here (Formspree needs nothing extra).
+  var FORM_ACCESS_KEY = "";
 
   // 2) LISTINGS — add or edit properties here; cards, filter tabs and sorting update automatically.
   //    type: "Office" | "Co-working" (a new type automatically gets its own filter tab)
@@ -1323,6 +1342,15 @@
     state.type = b.getAttribute('data-type'); syncControls();
   });
 
+  /* ---------- Analytics: every event goes to GTM's dataLayer (set up the GA4 tags in GTM) ---------- */
+  window.dataLayer = window.dataLayer || [];
+  function track(name, params) {
+    var o = { event: name };
+    for (var k in (params || {})) o[k] = params[k];
+    try { window.dataLayer.push(o); } catch (err) {}
+  }
+  var leadSource = 'contact_form';
+
   function findListing(id) { return LISTINGS.filter(function (l) { return l.id === id; })[0]; }
 
   function prefillRequirement(text) {
@@ -1351,10 +1379,13 @@
     var emptyReset = e.target.closest('#empty-reset');
     if (enq) {
       var l = findListing(enq.getAttribute('data-enquire'));
+      if (l) track('listing_enquire_click', { listing_id: l.id, listing_name: l.name, listing_type: l.type, listing_area: l.area });
+      if (l) leadSource = 'listing:' + l.id;
       if (l) prefillRequirement('Interested in: ' + l.name + ' (' + l.area + ', ' + l.city + ') — ' + l.priceLabel + '\n');
     } else if (calc) {
       var c = findListing(calc.getAttribute('data-calc'));
       if (c) {
+        track('listing_calculate_click', { listing_id: c.id, listing_name: c.name });
         if (c.sqft) $('k-area').value = c.sqft;
         $('k-rate').value = c.rate;
         recalc();
@@ -1406,6 +1437,8 @@
   $('calc-enquire').addEventListener('click', function () {
     if (!lastCalc) recalc();
     var c = lastCalc;
+    track('calculator_enquire_click', { area_sqft: c.area, rate_per_sqft: c.rate, term_years: c.years });
+    leadSource = 'calculator';
     prefillRequirement('Lease estimate: ' + c.area.toLocaleString('en-IN') + ' sq ft at ₹' + c.rate + '/sq ft/month, ' +
       c.years + '-year term, ' + c.esc + '% yearly escalation' + (c.gst ? ', incl. 18% GST' : '') +
       '. Est. first-year monthly: ' + inr.format(c.firstMonth) + '; total: ' + inr.format(c.total) + '.\nPreferred location/timeline: ');
@@ -1415,6 +1448,8 @@
   /* ---------- Owner CTA pre-fill ---------- */
   $('owner-cta').addEventListener('click', function () {
     var box = $('c-req');
+    track('owner_cta_click');
+    leadSource = 'owner_cta';
     if (!box.value) box.value = 'I am a landlord and would like to list my property.\nLocation, size, expected rent: ';
   });
 
@@ -1424,6 +1459,16 @@
   function setStatus(kind, msg) {
     statusEl.className = 'lp-status ' + (kind === 'ok' ? 'is-ok' : 'is-err');
     statusEl.textContent = msg;
+  }
+
+  var started = false;
+  form.addEventListener('focusin', function () {
+    if (!started) { started = true; track('form_start', { form_id: 'enquiry' }); }
+  });
+
+  function fail(reason, msg) {
+    track('form_error', { form_id: 'enquiry', error_reason: reason });
+    setStatus('err', msg);
   }
 
   form.addEventListener('submit', function (e) {
@@ -1438,29 +1483,54 @@
     };
     if (form.elements['website'].value) return; // bot caught by the honeypot
 
-    if (!data.name || !data.requirement) return setStatus('err', 'Please enter your name and requirement.');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return setStatus('err', 'Please enter a valid email address.');
+    if (!data.name || !data.requirement) return fail('missing_fields', 'Please enter your name and requirement.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return fail('invalid_email', 'Please enter a valid email address.');
+    if (data.phone) {
+      var digits = data.phone.replace(/\D/g, '');
+      if (!/^[0-9+()\-\s.]+$/.test(data.phone) || digits.length < 10 || digits.length > 13) {
+        return fail('invalid_phone', 'Please enter a valid phone number (10 digits), or leave it blank.');
+      }
+    }
+    var leadParams = { form_id: 'enquiry', lead_role: data.role, lead_source: leadSource };
 
     if (!FORM_ENDPOINT) {
       // Fallback until an endpoint is configured: open the visitor's mail app, pre-filled.
       var body = 'I am a: ' + data.role + '\nName: ' + data.name + '\nEmail: ' + data.email + '\nPhone: ' + (data.phone || '-') + '\n\n' + data.requirement;
+      track('enquiry_mailto_opened', leadParams);
       window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('LeaseProp.IN enquiry from ' + data.name) +
         '&body=' + encodeURIComponent(body);
       return setStatus('ok', 'Your email app should open with the message ready to send. If it does not, write to ' + CONTACT_EMAIL + ' or use the WhatsApp chat.');
     }
 
+    var payload = {
+      role: data.role, name: data.name, email: data.email, phone: data.phone, requirement: data.requirement,
+      source: leadSource, page: location.href,
+      _subject: 'LeaseProp.IN enquiry (' + data.role + ') from ' + data.name,
+      subject: 'LeaseProp.IN enquiry (' + data.role + ') from ' + data.name
+    };
+    if (FORM_ACCESS_KEY) payload.access_key = FORM_ACCESS_KEY;
+
     btn.disabled = true; btn.textContent = 'Sending…';
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
     fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(payload),
+      signal: ctrl ? ctrl.signal : undefined
     }).then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
-      form.reset();
+      return r.json().catch(function () { return {}; });
+    }).then(function (j) {
+      if (j && j.success === false) throw new Error('rejected');
+      track('generate_lead', leadParams);
+      form.reset(); setRole('Tenant'); leadSource = 'contact_form'; started = false;
       setStatus('ok', 'Thank you. We have your requirement and will get back to you shortly.');
-    }).catch(function () {
-      setStatus('err', 'Could not send right now. Please email ' + CONTACT_EMAIL + ' or use the WhatsApp chat.');
+    }).catch(function (err) {
+      fail(err && err.name === 'AbortError' ? 'timeout' : 'send_failed',
+        'Could not send right now. Please email ' + CONTACT_EMAIL + ' or use the WhatsApp chat.');
     }).then(function () {
+      clearTimeout(timer);
       btn.disabled = false; btn.textContent = 'Send enquiry';
     });
   });
@@ -1472,8 +1542,22 @@
   document.querySelectorAll('[data-wa]').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
-      window.open(waURL(), '_blank', 'noopener');
+      var where = el.classList.contains('lp-fab') ? 'floating_button'
+        : el.closest('footer') ? 'footer' : el.closest('#contact') ? 'contact_section' : 'other';
+      track('whatsapp_click', { link_location: where, link_text: (el.textContent || '').trim() || 'WhatsApp icon' });
+      var w = window.open(waURL(), '_blank', 'noopener');
+      if (!w) window.location.href = waURL(); // pop-up blocked (some in-app browsers)
     });
+  });
+
+  // Email and phone links (a tel: link added later is tracked automatically, no code change needed).
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="mailto:"], a[href^="tel:"], [data-call]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var where = a.closest('footer') ? 'footer' : a.closest('#contact') ? 'contact_section' : a.closest('header') ? 'header' : 'other';
+    if (href.indexOf('mailto:') === 0) track('email_click', { link_location: where });
+    else track('phone_click', { link_location: where });
   });
 
   /* ---------- Init ---------- */
